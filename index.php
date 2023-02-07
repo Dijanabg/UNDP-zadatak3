@@ -4,11 +4,11 @@
 // 3. prebacni delovi koda u view (header, footer)
 // 4. ubacen bootstrap navbar i inkludovan u header.php
 
-include "view/header.php";
+include "inc/header.php";
 
 ?>
 
     <h1>Hello, world!</h1>
     
 
-<?php include "view/footer.php";?>
+<?php include "inc/footer.php";?>

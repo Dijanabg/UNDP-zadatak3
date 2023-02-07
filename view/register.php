@@ -1,3 +1,4 @@
+<?php include "../inc/header.php";?>
 <div class="form-container">
 
    <form action="" method="post">
@@ -15,3 +16,4 @@
       <p>već si registrovan? <a href="../index.php">uloguj se</a></p>
    </form>
 </div>
+<?php include "../inc/footer.php";?>
