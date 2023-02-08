@@ -1,18 +1,22 @@
 <?php
 
-include "../db.php";
-include "../functions/myfunctions.php";
-include_once "../controller/RegisterController.php";
-include_once "../controller/LoginController.php";
+include "db.php";
 
+include_once "controller/RegisterController.php";
+include_once "controller/LoginController.php";
+$log = new LoginController;
 if (isset($_POST['login_btn'])) {
     $email = validateInput($conn, $_POST['email']);
     $password = validateInput($conn, $_POST['password']);
 
-    $log = new LoginController;
+    
     $checkLog = $log->login($email, $password, $conn);
     if($checkLog){
-        redirect("Ulogovali ste se uspesno", "../index.php");
+       if($_SESSION['auth_role']===1){
+        redirect("Ulogovali ste se uspesno", "admin.php");
+       }else{
+        redirect("Ulogovali ste se uspesno", "index.php");
+       }
     }else{
         redirect("Uneli ste pogresne podatke ili vec imate nalog", "login.php");
         ;

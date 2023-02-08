@@ -1,5 +1,6 @@
 <?php
-include "../db.php";
+include "db.php";
+include_once "code/auth.php";
 class RegisterController{
 
     public function registration($ime, $email, $password, mysqli $conn){

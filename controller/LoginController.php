@@ -1,5 +1,5 @@
 <?php
-include "../db.php";
+include "db.php";
 class LoginController{
 
 public function login($email, $password, mysqli $conn){
@@ -16,12 +16,19 @@ public function login($email, $password, mysqli $conn){
 
 private function userAuth($data, mysqli $conn){
         $_SESSION['auth'] = true;
-        //ovde bi trebalo staviti role 
+        $_SESSION['auth_role'] = $data['role_as'];
         $_SESSION['auth_user'] = [
             'user_id'=>$data['id'],
             'ime'=>$data['ime'],
             'email'=>$data['email']
         ];
 
+}
+public function isLoggedin(){
+    if (isset($_SESSION['auth'])===true) {
+        redirect("Ulogovani ste", "index.php");
+    } else {
+        return false;
+    }
 }
 }

@@ -3,7 +3,9 @@
 // 2. dodat jquery cdn
 // 3. prebacni delovi koda u view (header, footer)
 // 4. ubacen bootstrap navbar i inkludovan u header.php
-session_start();
+
+include "functions/myfunctions.php";
+include_once "code/auth.php";
 include "inc/header.php";
 
 ?>

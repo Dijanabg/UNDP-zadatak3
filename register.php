@@ -1,6 +1,8 @@
 <?php 
-   include "../code/auth.php";
-   include "../inc/header.php";
+include "functions/myfunctions.php";
+include_once "code/auth.php";
+   $log->isLoggedin();
+   include "inc/header.php";
 ?>
 
 
@@ -19,9 +21,9 @@
          <option value="user">user</option>
          <option value="admin">admin</option>
       </select>
-      <?php include "../code/message.php"?>
+      <?php include "code/message.php"?>
       <button type="submit" name="register_btn" class="btn btn-primary">Registruj se</button>
       <p>već si registrovan? <a href="login.php">uloguj se</a></p>
    </form>
 </div>
-<?php include "../inc/footer.php";?>
+<?php include "inc/footer.php";?>
