@@ -3,7 +3,21 @@
 include "../db.php";
 include "../functions/myfunctions.php";
 include_once "../controller/RegisterController.php";
+include_once "../controller/LoginController.php";
 
+if (isset($_POST['login_btn'])) {
+    $email = validateInput($conn, $_POST['email']);
+    $password = validateInput($conn, $_POST['password']);
+
+    $log = new LoginController;
+    $checkLog = $log->login($email, $password, $conn);
+    if($checkLog){
+        redirect("Ulogovali ste se uspesno", "../index.php");
+    }else{
+        redirect("Uneli ste pogresne podatke ili vec imate nalog", "login.php");
+        ;
+    }
+}
 if(isset($_POST['register_btn'])){
     $ime = validateInput($conn, $_POST['ime']);
     $email = validateInput($conn, $_POST['email']);
