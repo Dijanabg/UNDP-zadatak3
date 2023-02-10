@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    Admin dashboard
+    Admin panel
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -18,7 +18,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="admin/scripts/css/material-dashboard.min.css" rel="stylesheet" />
-  
+  <!-- Alertyfy JS za iskacuce poruke -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
 </head>
 

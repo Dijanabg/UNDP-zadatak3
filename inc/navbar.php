@@ -15,7 +15,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
-        <?php 
+        <?php  
         if (isset($_SESSION['auth'])) 
         { 
         ?>

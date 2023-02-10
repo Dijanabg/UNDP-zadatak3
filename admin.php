@@ -1,4 +1,5 @@
 <?php
+
 //echo "hello admin";
 //https://www.creative-tim.com/product/material-dashboard
 include_once "functions/myfunctions.php";
@@ -8,6 +9,7 @@ $authenticated = new AuthController;
 $authenticated->admin($conn);
 
 include "admin/inc/header.php";
+
 ?>
 <div class="container">
     <div class="row">

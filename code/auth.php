@@ -4,14 +4,15 @@ include "db.php";
 
 include_once "controller/RegisterController.php";
 include_once "controller/LoginController.php";
-$log = new LoginController;
+
+$checkLog = new LoginController;
 if (isset($_POST['login_btn'])) {
     $email = validateInput($conn, $_POST['email']);
     $password = validateInput($conn, $_POST['password']);
 
     
-    $checkLog = $log->login($email, $password, $conn);
-    if($checkLog){
+    $checkLog->login($email, $password, $conn);
+    if(isset($checkLog)){
        if($_SESSION['auth_role'] && $_SESSION['auth_role']===1){
         redirect("Ulogovali ste se uspesno", "admin.php");
        }else{
