@@ -1,8 +1,7 @@
 <?php 
 include "functions/myfunctions.php";
 include_once "code/auth.php";
-   $log->isLoggedin();
-   include "inc/header.php";
+include "inc/header.php";
 ?>
 
 
