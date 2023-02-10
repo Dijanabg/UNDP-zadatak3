@@ -12,7 +12,7 @@ if (isset($_POST['login_btn'])) {
     
     $checkLog = $log->login($email, $password, $conn);
     if($checkLog){
-       if($_SESSION['auth_role']===1){
+       if($_SESSION['auth_role'] && $_SESSION['auth_role']===1){
         redirect("Ulogovali ste se uspesno", "admin.php");
        }else{
         redirect("Ulogovali ste se uspesno", "index.php");
