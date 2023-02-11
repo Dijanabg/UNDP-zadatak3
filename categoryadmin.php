@@ -8,7 +8,7 @@ include_once "controller/TableController.php"
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-gradient-primary">
                     <h4>Kategorije</h4>
                 </div>
                 <div class="card-body">
@@ -34,10 +34,10 @@ include_once "controller/TableController.php"
                                             <img src="uploads/<?= $item['image']; ?>" alt="<?= $item['ime']; ?>">
                                         </td>
                                         
-                                        <td><a href="categoryedit.php?id=<?= $item['id']; ?>" class="btn btn-primary">Ažuriraj</a>
+                                        <td><a href="categoryedit.php?id=<?= $item['id']; ?>" class="btn bg-gradient-primary">Ažuriraj</a>
                                             <form action="code/admincode.php" method="post">
                                                 <input type="hidden" name="id" value="<?= $item['id']; ?>">
-                                                <button type="submit" class="btn btn-danger" name="delete_category_btn">Obriši</button>
+                                                <button type="submit" class="btn bg-gradient-primary" name="delete_category_btn">Obriši</button>
                                             </form>
                                         </td>
                                     </tr>

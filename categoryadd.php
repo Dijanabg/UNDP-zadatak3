@@ -9,7 +9,7 @@ include_once "admin/inc/sidebar.php";
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-gradient-primary">
                     <h4>Unos nove kategorije</h4>
                 </div>
                 <div class="card-body">
@@ -29,7 +29,7 @@ include_once "admin/inc/sidebar.php";
                             </div>
                            
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="add_category_btn">Save</button>
+                                <button type="submit" class="btn bg-gradient-primary" name="add_category_btn">Save</button>
                             </div>
                         </div>
                     </form>

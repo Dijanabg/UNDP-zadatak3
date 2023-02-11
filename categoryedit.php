@@ -16,9 +16,9 @@ include_once "controller/TableController.php"
                     $data = mysqli_fetch_array($category);
             ?>
                     <div class="card">
-                        <div class="card-header bg-primary">
+                        <div class="card-header bg-gradient-primary">
                             <h4>Ažuriraj kategoriju
-                                <a href="categoryadmin.php" class="btn btn-primary float-end">Nazad</a>
+                                <a href="categoryadmin.php" class="btn bg-gradient-primary float-end">Nazad</a>
                             </h4>
                         </div>
                         <div class="card-body">
@@ -43,7 +43,7 @@ include_once "controller/TableController.php"
                                     </div>
                                     
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary" name="update_category_btn">Ažuriraj</button>
+                                        <button type="submit" class="btn bg-gradient-primary" name="update_category_btn">Ažuriraj</button>
                                     </div>
                                 </div>
                             </form>
