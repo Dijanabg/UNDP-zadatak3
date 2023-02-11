@@ -21,9 +21,9 @@ if (isset($_POST['add_category_btn'])) {
 
     if ($cate_query_run) {
         move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $imgname);
-        redirect("Category added successfully", "../categoryadd.php");
+        redirect("Kategorija je dodata uspešno", "../categoryadd.php");
     } else {
-        redirect("Something went wrong", "../categoryadd.php");
+        redirect("Nešto je pošlo po zlu", "../categoryadd.php");
     }
 }elseif (isset($_POST['delete_category_btn'])) {
     $category_id = mysqli_real_escape_string($conn, $_POST['id']);
@@ -40,9 +40,9 @@ if (isset($_POST['add_category_btn'])) {
         if (file_exists("../uploads/" . $image)) {
             unlink("../uploads/" . $image);
         }
-        redirect("Category deleted successfully", "../categoryadmin.php");
+        redirect("Kategorija je izbrisana uspešno", "../categoryadmin.php");
     } else {
-        redirect("something went wrong", "../categoryadmin.php");
+        redirect("Nešto je pošlo po zlu", "../categoryadmin.php");
     }
 } elseif (isset($_POST['update_category_btn'])) {
     $category_id = $_POST['id'];
@@ -72,8 +72,64 @@ if (isset($_POST['add_category_btn'])) {
                 unlink("../uploads/" . $old_image);
             }
         }
-        redirect("Category Updated successfuly", "../categoryedit.php?id=$category_id");
+        redirect("Kategorija je ažurirana uspešno", "../categoryedit.php?id=$category_id");
     } else {
-        redirect("Something went wrong", "../categoryedit.php?id=$category_id" );
+        redirect("Nešto je pošlo po zlu", "../categoryedit.php?id=$category_id" );
+    }
+}elseif (isset($_POST['add_product_btn'])) {
+
+    $categoryId = $_POST['categoryId'];
+
+    $ime = $_POST['ime'];
+    $kratkiOpis = $_POST['kratkiOpis'];
+    $opis = $_POST['opis'];
+    $orginalnaCena = $_POST['originalnaCena'];
+    $prodajnaCena = $_POST['prodajnaCena'];
+    $kolicina = $_POST['kolicina'];
+    $status = isset($_POST['status']) ? '1' : '0';
+
+    $image = $_FILES['image']['name'];
+
+    $path = "../uploads";
+
+    $image_ext = pathinfo($image, PATHINFO_EXTENSION);
+    $filename = time() . '.' . $image_ext;
+
+    if ($ime != "" && $kratkiOpis != "" && $opis != "") {
+
+        $product_query = "INSERT INTO products (categoryId,ime, kratkiOpis, opis, orginalnaCena, prodajnaCena, kolicina, status, image ) VALUES ('$categoryId','$ime','$kratkiOpis', '$opis', '$orginalnaCena', '$prodajnaCena', '$kolicina', '$status', '$filename' )";
+        $product_query_run = mysqli_query($conn, $product_query);
+
+        if ($product_query_run) {
+            move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $filename);
+
+            redirect("Proizvod je uspešno dodat","../productsadd.php");
+        } else {
+            redirect("Nešto je krenulo po zlu", "../productsadd.php");
+        }
+    } else {
+        redirect("Sva polja su obavezna", "productsadd.php");
+    }
+}elseif (isset($_POST['delete_product_btn'])) {
+    $product_id = mysqli_real_escape_string($conn, $_POST['id']);
+
+    $product_query = "SELECT * FROM products WHERE id='$product_id'";
+    $product_query_run = mysqli_query($conn, $product_query);
+    $product_data = mysqli_fetch_array($product_query_run);
+    $image = $product_data['image'];
+
+    $delete_query = "DELETE FROM products WHERE id='$product_id'";
+    $delete_query_run = mysqli_query($conn, $delete_query);
+
+    if ($delete_query_run) {
+        if (file_exists("../uploads/" . $image)) {
+            unlink("../uploads/" . $image);
+        }
+        redirect("Proizvod je uspešno obrisan", "../productsadmin.php");
+        //echo 200;
+        //header('Location: .');
+    } else {
+        redirect("Nešto je pošlo po zlu", "../productsadmin.php");
+        //echo 500;
     }
 }
