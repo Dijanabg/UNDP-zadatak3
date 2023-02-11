@@ -44,4 +44,36 @@ if (isset($_POST['add_category_btn'])) {
     } else {
         redirect("something went wrong", "../categoryadmin.php");
     }
+} elseif (isset($_POST['update_category_btn'])) {
+    $category_id = $_POST['id'];
+    $ime = $_POST['ime'];
+    $opis = $_POST['opis'];
+   
+    $new_image = $_FILES['image']['name'];
+    $old_image = $_POST['old_image'];
+
+    if ($new_image != "") {
+        //$update_filename = $new_image;
+        $image_ext = pathinfo($old_image, PATHINFO_EXTENSION);
+        $update_filename = time() . '.' . $new_image;
+    } else {
+        $update_filename = $old_image;
+    }
+    $path = "../uploads";
+
+    $update_query = "UPDATE categories SET ime='$ime', opis='$opis', image='$update_filename' WHERE id='$category_id'";
+    $update_query_run = mysqli_query($conn, $update_query);
+    
+
+    if ($update_query_run) {
+        if ($_FILES['image']['name'] != "") {
+            move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $new_image);
+            if (file_exists("../uploads/" . $old_image)) {
+                unlink("../uploads/" . $old_image);
+            }
+        }
+        redirect("Category Updated successfuly", "../categoryedit.php?id=$category_id");
+    } else {
+        redirect("Something went wrong", "../categoryedit.php?id=$category_id" );
+    }
 }

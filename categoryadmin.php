@@ -34,7 +34,7 @@ include_once "controller/TableController.php"
                                             <img src="uploads/<?= $item['image']; ?>" alt="<?= $item['ime']; ?>">
                                         </td>
                                         
-                                        <td><a href="edit-category.php?id=<?= $item['id']; ?>" class="btn btn-primary">Ažuriraj</a>
+                                        <td><a href="categoryedit.php?id=<?= $item['id']; ?>" class="btn btn-primary">Ažuriraj</a>
                                             <form action="code/admincode.php" method="post">
                                                 <input type="hidden" name="id" value="<?= $item['id']; ?>">
                                                 <button type="submit" class="btn btn-danger" name="delete_category_btn">Obriši</button>
