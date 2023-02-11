@@ -30,7 +30,7 @@ include_once "controller/TableController.php"
                                     <div class="col-md-12  mb-2">
                                         <label for="">Izaberi kategoriju</label>
 
-                                        <select name="category_id" class="form-select">
+                                        <select name="category_id"  class="form-select">
                                             <option selected>Izaberi kategoriju</option>
                                             <?php
                                             $category = getAll("categories");
@@ -42,7 +42,7 @@ include_once "controller/TableController.php"
                                             <?php
                                                 }
                                             } else {
-                                                echo "No category available";
+                                                echo "Kategorija nije dostupna";
                                             }
                                             ?>
                                         </select>

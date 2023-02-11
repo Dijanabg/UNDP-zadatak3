@@ -132,4 +132,43 @@ if (isset($_POST['add_category_btn'])) {
         redirect("Nešto je pošlo po zlu", "../productsadmin.php");
         //echo 500;
     }
+} elseif (isset($_POST['update_product_btn'])) {
+    $product_id = $_POST['id'];
+    $category_id = $_POST['category_id'];
+
+    $ime = $_POST['ime'];
+    $kratkiOpis = $_POST['kratkiOpis'];
+    $opis = $_POST['opis'];
+    $orginalnaCena = $_POST['orginalnaCena'];
+    $prodajnaCena = $_POST['prodajnaCena'];
+    $kolicina = $_POST['kolicina'];
+    $status = isset($_POST['status']) ? '1' : '0';
+
+    $path = "../uploads";
+
+    $new_image = $_FILES['image']['name'];
+    $old_image = $_POST['old_image'];
+
+    if ($new_image != "") {
+        //$update_filename = $new_image;
+        $image_ext = pathinfo($new_image, PATHINFO_EXTENSION);
+        $update_filename = time() . '.' . $image_ext;
+    } else {
+        $update_filename = $old_image;
+    }
+    $path = "../uploads";
+    $update_product_query = "UPDATE products SET categoryId='$category_id',ime='$ime', kratkiOpis='$kratkiOpis', opis='$opis', orginalnaCena='$orginalnaCena', prodajnaCena='$prodajnaCena', kolicina='$kolicina', status='$status', image='$update_filename' WHERE id='$product_id'";
+    $update_product_query_run = mysqli_query($conn, $update_product_query);
+
+    if ($update_product_query_run) {
+        if ($_FILES['image']['name'] != "") {
+            move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $update_filename);
+            if (file_exists("../uploads/" . $old_image)) {
+                unlink("../uploads/" . $old_image);
+            }
+        }
+        redirect( "Product Updated successfuly","../productsedit.php?id=$product_id");
+    } else {
+        redirect("Something went wrong","../productsedit.php?id=$product_id");
+    }
 }

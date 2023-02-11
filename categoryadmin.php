@@ -31,7 +31,7 @@ include_once "controller/TableController.php"
                                         <td><?= $item['id']; ?></td>
                                         <td><?= $item['ime']; ?></td>
                                         <td>
-                                            <img src="uploads/<?= $item['image']; ?>" alt="<?= $item['ime']; ?>">
+                                            <img src="uploads/<?= $item['image']; ?>" width="100px" height="100px" alt="<?= $item['ime']; ?>">
                                         </td>
                                         
                                         <td><a href="categoryedit.php?id=<?= $item['id']; ?>" class="btn bg-gradient-primary">Ažuriraj</a>
