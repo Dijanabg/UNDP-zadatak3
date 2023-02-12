@@ -18,3 +18,10 @@ function getById($table, $id)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+ function getAllActive($table)
+{
+    global $conn;
+    $query = "SELECT * FROM $table WHERE status='0'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}

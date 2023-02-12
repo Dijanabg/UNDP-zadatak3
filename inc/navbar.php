@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-body-dark bg-dark shadow">
+<nav class="navbar fs-3 navbar-expand-lg navbar-dark bg-body-dark bg-dark shadow">
   <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand fs-3 " href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link  active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="category.php">Kategorije</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -24,9 +24,9 @@
               <!-- ne znam zasto nece da ispise ime<?= $_SESSION['auth_user']['ime'] ?> -->
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item fs-3" href="#">Action</a></li>
                 
-                <li><a class="dropdown-item" href="view/logout.php">Izloguj se</a></li>
+                <li><a class="dropdown-item fs-3" href="view/logout.php">Izloguj se</a></li>
               </ul>
             </li>
         <?php

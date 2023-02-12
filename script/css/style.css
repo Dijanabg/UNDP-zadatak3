@@ -117,7 +117,7 @@ section{
 
 .white-btn,
 .btn{
-   background-color: var(--purple);
+   background-color: #0c087d;
 }
 
 .option-btn{
@@ -132,7 +132,14 @@ section{
    background-color: var(--white);
    color:var(--black);
 }
-
+.topview{
+   margin:  50px 0 40px 100px;
+}
+.prod{
+   margin: auto;
+   line-height: 3rem;
+   padding: 50px 20vw;
+}
 .heading{
    min-height: 30vh;
    display: flex;

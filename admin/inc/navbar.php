@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Kategorije</a>
+          <a class="nav-link text-white" href="category.php">Kategorije</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#">Katalog</a>
