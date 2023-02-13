@@ -77,7 +77,7 @@ include "inc/header.php";
                                 ?>
                             </div>
                             <div class="float-end">
-                                <a href="checkout.php" class="btn btn-outline-primary">Prosseed to checkout</a>
+                                <a href="checkout.php" class="btn btn-outline-primary">Poruči</a>
                             </div>
                         <?php
                         } else {
