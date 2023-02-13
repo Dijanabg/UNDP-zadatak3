@@ -33,7 +33,27 @@ if (isset($_SESSION['auth']) == true) {
                 }
 
                 break;
-            
+                case "update":
+                    $prodId = $_POST['prodId'];
+                    $prodQty = $_POST['prodQty'];
+    
+                    $userId = $_SESSION['auth_user']['id'];
+    
+                    $chk_existing_cart = "SELECT * FROM carts WHERE prodId='$prodId' AND userId='$userId'";
+                    $chk_existing_cart_run = mysqli_query($conn, $chk_existing_cart);
+    
+                    if (mysqli_num_rows($chk_existing_cart_run) > 0) {
+                        $update_query = "UPDATE carts SET prodQty='$prodQty' WHERE prodId='$prodId' AND userId='$userId'";
+                        $update_query_run = mysqli_query($conn, $update_query);
+                        if ($update_query_run) {
+                            echo 200;
+                        } else {
+                            echo 500;
+                        }
+                    } else {
+                        echo "Nešto je pošlo po zlu";
+                    }
+                    break;
 
             default:
                 echo 500;

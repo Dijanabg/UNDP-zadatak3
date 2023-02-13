@@ -57,13 +57,44 @@ $(document).ready(function () {
                         else if (response == 500) {
                             alertify.success("Nešto je pošlo po zlu");
                         }
-              });
+        });
             
         request.fail(function (jqXHR, textStatus, errorThrown) {
                 console.error("Sledeca greska se desila: " + textStatus, errorThrown)
                 console.log(jqXHR)
-              });
- 
-            });
         });
+ 
+    });
+    $(document).on('click', '.updateQty', function (e) {
+                e.preventDefault();
+                var prodQty = $(this).closest('.product_data').find('.input-qty').val();
+                var prodId = $(this).closest('.product_data').find('.prodId').val();
+        
+        $request= $.ajax({
+                    method: "POST",
+                    url: "code/handleCart.php",
+                    data: {
+                        "prodId": prodId,
+                        "prodQty": prodQty,
+                        "scope": "update"
+                    }
+                });
+        request.done(function (response, textStatus, jqXHR) {
+                    console.log(response)
+                        if (response == 201) {
+                                    alertify.success("Količina je ažurirana");
+                                }
+                                else if (response == 401) {
+                                    alertify.success("Ulogujte se da bi nastavili");
+                                }
+                                else if (response == 500) {
+                                    alertify.success("Nešto je pošlo po zlu");
+                                }
+                });
+        request.fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error("Sledeca greska se desila: " + textStatus, errorThrown)
+                    console.log(jqXHR)
+            });
+    });
+});
     
