@@ -21,10 +21,10 @@
         ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-              <!-- ne znam zasto nece da ispise ime<?php echo $_SESSION['auth_user']['email'] ?> -->
+              <?php echo $_SESSION['auth_user']['email'] ?>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item fs-3" href="#">Action</a></li>
+                <li><a class="dropdown-item fs-3" href="cart.php">Korpa</a></li>
                 
                 <li><a class="dropdown-item fs-3" href="view/logout.php">Izloguj se</a></li>
               </ul>

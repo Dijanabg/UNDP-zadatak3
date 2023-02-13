@@ -10,13 +10,14 @@ public function login($email, $password, mysqli $conn){
             $_SESSION['auth'] = true;
 
             $userdata = mysqli_fetch_array($result);
-            $userid = $userdata['id'];
+           
+            $userId = $userdata['id'];
             $ime = $userdata['ime'];
             $email = $userdata['email'];
             $role_as = $userdata['role_as'];
     
             $_SESSION['auth_user'] = [
-                'user_id' => $userid,
+                'id' => $userId,
                 'ime' => $ime,
                 'email' => $email
     
