@@ -12,7 +12,7 @@ include "inc/header.php";
       <h3>registruj se</h3>
 
       
-      <input type="text" name="name" placeholder="unesi svoje ime" required class="box">
+      <input type="text" name="ime" placeholder="unesi svoje ime" required class="box">
       <input type="email" name="email" placeholder="unesi svoj email" required class="box">
       <input type="password" name="password" placeholder="unesi svoju šifru" required class="box">
       <input type="password" name="cpass" placeholder="potvrdi svoju šifru" required class="box">
