@@ -4,7 +4,7 @@
 include "functions/myfunctions.php";
 include "inc/header.php";
 include_once "controller/TableController.php";
-include_once "controller/AuthController.php";
+ //include_once "controller/AuthController.php";
 include_once "controller/UserController.php";
 
 ?>
@@ -13,15 +13,7 @@ include_once "controller/UserController.php";
     <div class="container">
         <h6 class="text-white fs-4"> 
             <a class="text-white fs-4" href="index.php">Home /</a> Kategorije /
-        <?php 
-                    //$_SESSION['role_as'] = $role_as;
-                    $admin = new AuthController;
-                    $adminLog=$admin->adminBtn($conn);
-                    
-                    if($adminLog == true){?>
-                    <a href="categoryadmin.php" class=" btn  bg-secondary float-end">Admin panel</a>
-                    <?php }?>
-       </h6>
+        
     </div>
 </div>
 <div class="py-5">

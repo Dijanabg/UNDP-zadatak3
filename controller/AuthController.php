@@ -18,7 +18,7 @@ public function admin(mysqli $conn){
             redirect("Nemate administratorska ovlascenja", "index.php");
         }
     }
-public function adminBtn(mysqli $conn){
+    public function adminBtn(mysqli $conn){
         $user_id = $_SESSION['auth_user']['user_id'];
         $query = "SELECT id, role_as FROM users WHERE id='$user_id' AND role_as='1' LIMIT 1 ";
         $result = $conn->query($query);

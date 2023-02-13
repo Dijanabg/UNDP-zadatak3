@@ -4,7 +4,6 @@
 include "functions/myfunctions.php";
 include "inc/header.php";
 include_once "controller/TableController.php";
-include_once "controller/AuthController.php";
 include_once "controller/UserController.php";
 
 if (isset($_GET['categoryId'])) {
@@ -23,14 +22,6 @@ if (isset($_GET['categoryId'])) {
                     <a class="text-white" href="index.php">Home /</a>
                     <a class="text-white" href="category.php">Kategorije /</a>
                     <?= $category['ime']; ?>
-                    <?php 
-                    //$_SESSION['role_as'] = $role_as;
-                    $admin = new AuthController;
-                    $adminLog=$admin->adminBtn($conn);
-                    
-                    if($adminLog == true){?>
-                    <a href="categoryadmin.php" class=" btn  bg-secondary float-end">Admin panel</a>
-                    <?php }?>
                 </h6>
             </div>
         </div>

@@ -21,7 +21,7 @@
         ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <!-- ne znam zasto nece da ispise ime<?= $_SESSION['auth_user']['ime'] ?> -->
+              <!-- ne znam zasto nece da ispise ime<?php echo $_SESSION['auth_user']['ime'] ?> -->
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item fs-3" href="#">Action</a></li>
@@ -29,6 +29,17 @@
                 <li><a class="dropdown-item fs-3" href="view/logout.php">Izloguj se</a></li>
               </ul>
             </li>
+            <li><?php include_once "controller/AuthController.php";
+                    //$_SESSION['role_as'] = $role_as;
+                    $admin = new AuthController;
+                    
+                    $adminLog=$admin->adminBtn($conn);
+                    
+                    if($adminLog == true){?>
+                    <a href="admin.php" class=" nav-link">Admin panel</a>
+            </li>
+                    <?php }?>
+       </h6>
         <?php
         }else{ 
         ?>
