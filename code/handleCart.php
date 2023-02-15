@@ -54,6 +54,25 @@ if (isset($_SESSION['auth']) == true) {
                         echo "Nešto je pošlo po zlu";
                     }
                     break;
+                    case "delete":
+                        $cartId = $_POST['cartId'];
+                        $userId = $_SESSION['auth_user']['id'];
+        
+                        $chk_existing_cart = "SELECT * FROM carts WHERE id='$cartId' AND userId='$userId'";
+                        $chk_existing_cart_run = mysqli_query($conn, $chk_existing_cart);
+        
+                        if (mysqli_num_rows($chk_existing_cart_run) > 0) {
+                            $delete_query = "DELETE FROM carts WHERE id='$cartId'";
+                            $delete_query_run = mysqli_query($conn, $delete_query);
+                            if ($delete_query_run) {
+                                echo 200;
+                            } else {
+                                echo "Nešto je krenulo po zlu";
+                            }
+                        } else {
+                            echo "Nešto je krenulo po zlu";
+                        }
+                        break;
 
             default:
                 echo 500;

@@ -43,6 +43,8 @@ include "inc/header.php";
                             </div>
                             <div id="">
                                 <?php
+                                $subPrice =0;
+                                $totalPrice=0;
                                 foreach ($items as $citem) {
                                 ?>
                                     <div class="card product_data shadow-sm mb-3">
@@ -53,12 +55,13 @@ include "inc/header.php";
                                             <div class="col-md-4">
                                                 <h5><?= $citem['ime']; ?></h5>
                                             </div>
-                                            <div class="col-md-2">
-                                                <h5><?= $citem['prodajnaCena']; ?></h5>
+                                            <div class="col-md-2 text-center">
+                                                <h3 class=""> <?=
+                                $subPrice = $citem['prodajnaCena'] * $citem['prodQty']; ?></h3>
                                             </div>
                                             <div class="col-md-2">
                                                 <input type="hidden" class="prodId" value="<?= $citem['prodId']; ?>">
-                                                <div class="input-group mb-3" style="width: 150px;">
+                                                <div class="input-group mb-3" style="width: 80px;">
                                                     <button class="input-group-text decrement-btn updateQty">-</button>
                                                     <input type="text" class="form-control text-center input-qty bg-white " value="<?= $citem['prodQty']; ?>" disabled>
                                                     <button class=" input-group-text increment-btn updateQty">+</button>
@@ -71,14 +74,16 @@ include "inc/header.php";
                                             </div>
                                         </div>
                                     </div>
-                                <?php
-
-                                }
-                                ?>
+                                    <?php $totalPrice += $citem['prodajnaCena'] * $citem['prodQty']; 
+                                } ?>
                             </div>
-                            <div class="float-end">
+                            <div class="text-center">
+                                <h5><span class=" fw-bold fs-3"> Ukupna cena: <?= $totalPrice ?></span></h5>
+                            </div>
+                            <div class=" float-end">
                                 <a href="checkout.php" class="btn btn-outline-primary">Poruči</a>
                             </div>
+                           
                         <?php
                         } else {
                         ?>

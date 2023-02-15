@@ -705,7 +705,9 @@ section{
 .shopping-cart .box-container .box .sub-total span{
    color:var(--red);
 }
-
+.totalPrice{
+   margin-right: 50px;
+}
 .shopping-cart .cart-total{
    max-width: 1200px;
    margin:0 auto;

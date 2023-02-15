@@ -11,6 +11,7 @@ $(document).ready(function () {
             value++;
             //$('.input-qty').val(value);
             $(this).closest('.product_data').find('.input-qty').val(value);
+            
         }
     });
     $(document).on('click', '.decrement-btn', function (e) {
@@ -70,19 +71,22 @@ $(document).ready(function () {
                 var prodQty = $(this).closest('.product_data').find('.input-qty').val();
                 var prodId = $(this).closest('.product_data').find('.prodId').val();
         
-        $request= $.ajax({
+        //$request= 
+        $.ajax({
                     method: "POST",
                     url: "code/handleCart.php",
                     data: {
                         "prodId": prodId,
                         "prodQty": prodQty,
                         "scope": "update"
-                    }
-                });
-        request.done(function (response, textStatus, jqXHR) {
-                    console.log(response)
-                        if (response == 201) {
+                    },
+                    success: function(response){
+                        console.log(response)
+                        if (response == 200) {
+                                //to refresh only cart
+                                     $('#mycart').load(location.href + " #mycart");
                                     alertify.success("Količina je ažurirana");
+                                    
                                 }
                                 else if (response == 401) {
                                     alertify.success("Ulogujte se da bi nastavili");
@@ -90,11 +94,53 @@ $(document).ready(function () {
                                 else if (response == 500) {
                                     alertify.success("Nešto je pošlo po zlu");
                                 }
+                    }
                 });
-        request.fail(function (jqXHR, textStatus, errorThrown) {
-                    console.error("Sledeca greska se desila: " + textStatus, errorThrown)
-                    console.log(jqXHR)
-            });
+                
+                //nisam resila gresku ReferenceError: request is not defined at HTMLButtonElement,
+                //mislim da je trebalo dodati onclick u html ali neradi
+        // request.done(function (response, textStatus, jqXHR) {
+        //             console.log(response)
+        //             console.log("Sledeca greska se desila: " + textStatus)
+        //             console.log(jqXHR)
+        //                 if (response == 201) {
+        //                             alertify.success("Količina je ažurirana");
+        //                             //to refresh only cart
+        //             $('#mycart').load(location.href + " #mycart");
+        //                         }
+        //                         else if (response == 401) {
+        //                             alertify.success("Ulogujte se da bi nastavili");
+        //                         }
+        //                         else if (response == 500) {
+        //                             alertify.success("Nešto je pošlo po zlu");
+        //                         }
+        //         });
+        // request.fail(function (jqXHR, textStatus, errorThrown) {
+        //             console.error("Sledeca greska se desila: " + textStatus, errorThrown)
+        //             console.log(jqXHR)
+        //     });
+    });
+    $(document).on('click', '.deleteItem', function () {
+        var cartId = $(this).val();
+        //alert(cart_id);
+        $.ajax({
+            method: "POST",
+            url: "code/handleCart.php",
+            data: {
+                "cartId": cartId,
+                "scope": "delete"
+            },
+            success: function (response) {
+                console.log(response)
+                if (response == 200) {
+                    alertify.success("Proizvod je izbrisan");
+                    //to refresh only cart
+                    $('#mycart').load(location.href + " #mycart");
+                } else {
+                    alertify.success(response);
+                }
+            }
+        });
     });
 });
     
