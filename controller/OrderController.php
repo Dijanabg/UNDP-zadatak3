@@ -6,7 +6,8 @@ class OrderController{
     global $conn;
     $userId = $_SESSION['auth_user']['id'];
 
-    $query = "SELECT * FROM orders WHERE userId='$userId' ORDER BY id DESC";
+    $query = "SELECT * FROM orders WHERE userId='$userId'";
+    // ORDER BY id DESC";
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }

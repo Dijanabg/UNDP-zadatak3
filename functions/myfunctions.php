@@ -3,7 +3,7 @@ session_start();
 
 
 function redirect($message, $page){
-    include_once "code/message.php";
+    include_once "../code/message.php";
     $_SESSION['message'] = "$message";
     header("Location: ". $page);
     exit(0);

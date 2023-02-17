@@ -1,5 +1,5 @@
 <?php
-include "functions/myfunctions.php";
+include_once "functions/myfunctions.php";
 include "view/authenticate.php";
 include_once "controller/OrderController.php";
 include "inc/header.php";
@@ -41,7 +41,7 @@ include "inc/header.php";
                                         <td><?= $item['trackingNo']; ?></td>
                                         <td><?= $item['totalPrice']; ?></td>
                                         <td><?= $item['created_at']; ?></td>
-                                        <td><a href="viewOrder.php?t=<?= $item['tracking_no']; ?>" class="btn btn-primary">Vidi detalje</a></td>
+                                        <td><a href="viewOrder.php?t=<?= $item['trackingNo']; ?>" class="btn btn-primary">Vidi detalje</a></td>
                                     </tr>
                                 <?php
                                 }

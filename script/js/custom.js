@@ -45,8 +45,8 @@ $(document).ready(function () {
         });
            
         request.done(function (response, textStatus, jqXHR) {
-            console.log(response)
-                if (response == 201) {
+            //console.log(response)
+                if (response == 200) {
                             alertify.success("Proizvod je dodat u korpu");
                         }
                         else if (response == "existing") {

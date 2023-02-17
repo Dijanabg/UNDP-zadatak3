@@ -18,7 +18,7 @@ include "inc/header.php";
     <div class="container">
         <div class="card">
             <div class="card card-body shadow mt-3">
-                <form action="placeOrders.php" method="POST">
+                <form action="code/placeOrder.php" method="POST">
                     <div class="row">
                         <div class="col-md-7">
                             <h5>Osnovni podaci</h5>
@@ -26,7 +26,7 @@ include "inc/header.php";
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label class="fw-bold">Ime i prezime</label>
-                                    <input type="text" name="ime" required placeholder="Unesi ime i prezime" class="form-control">
+                                    <input type="text" name="imePrezime" required placeholder="Unesi ime i prezime" class="form-control">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="fw-bold">Email</label>
@@ -76,7 +76,7 @@ include "inc/header.php";
                                 $totalPrice += $citem['prodajnaCena'] * $citem['prodQty'];
                             }
                             ?>
-                            <h5>Total price : <span class="float-end fw-bold"><?= $totalPrice ?></span></h5>
+                            <h5>Ukupna cena : <span class="float-end fw-bold"><?= $totalPrice ?></span></h5>
                             <div>
                                 <input type="hidden" name="payMode" value="pp">
                                 <button type="submit" name="placeOrderBtn" class="btn btn-primary w-100">Potvrdi porudžbinu</button>

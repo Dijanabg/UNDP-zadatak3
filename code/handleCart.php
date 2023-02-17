@@ -24,14 +24,12 @@ if (isset($_SESSION['auth']) == true) {
                     $insert_query_run = mysqli_query($conn, $insert_query);
 
                     if ($insert_query_run) {
-                        redirect("Proizvod dodat","../cart.php");
-                        echo 201;
+                        echo 200;
                     } else {
-                        redirect("joj","productView.php");
                         echo 500;
                     }
                 }
-
+ 
                 break;
                 case "update":
                     $prodId = $_POST['prodId'];
