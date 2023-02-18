@@ -11,6 +11,13 @@ class OrderController{
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getAllOrders()
+{
+    global $conn;
+    $query = "SELECT * FROM orders WHERE status='0' ";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
 
 function checkTrackingNoValid($trackingNo)
 {

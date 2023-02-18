@@ -2,7 +2,7 @@
 include_once "../functions/myfunctions.php";
 include_once "inc/header.php";
 
-include_once "../controller/TableController.php"
+include_once "../controller/TableController.php";
 ?>
 <div class="container">
     <div class="row">
