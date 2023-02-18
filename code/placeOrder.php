@@ -56,9 +56,14 @@ if (isset($_SESSION['auth']) == true) {
                 $updateQty_query_run = mysqli_query($conn, $updateQty_query);
             }
             //ovde treba da dodam delete iz carts tabele
+            $deleteCartQuery = "DELETE FROM carts WHERE userId='$userId'";
+            $deleteCartQuery_run = mysqli_query($conn, $deleteCartQuery);
+
+
             redirect("Porudzbina je prihvacena", "../myOrders.php");
             die();
-
         }
-    
-    }}
+    }
+} else {
+    header('Location: ../index.php');
+}
