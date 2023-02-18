@@ -1,6 +1,6 @@
 <?php 
 
-include "../db.php";
+include "../config/db.php";
 include "../functions/myfunctions.php";
 
 
@@ -60,10 +60,10 @@ if (isset($_SESSION['auth']) == true) {
             $deleteCartQuery_run = mysqli_query($conn, $deleteCartQuery);
 
 
-            redirect("Porudzbina je prihvacena", "../myOrders.php");
+            redirect("Porudzbina je prihvacena", "../view/myOrders.php");
             die();
         }
     }
 } else {
-    header('Location: ../index.php');
+    header('Location: ../view/home.php');
 }

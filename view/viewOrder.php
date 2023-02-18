@@ -1,9 +1,9 @@
 <?php
 //session_start();
-include "functions/myfunctions.php";
-include "inc/header.php";
-include "view/authenticate.php";
-include "controller/OrderController.php";
+include "../functions/myfunctions.php";
+include "../inc/header.php";
+include "authenticate.php";
+include "../controller/OrderController.php";
 
 if (isset($_GET['t'])) {
     $orderData=new OrderController;
@@ -27,8 +27,8 @@ $data = mysqli_fetch_array($validOrderData);
 <div class="py-3 bg-primary">
     <div class="container">
         <h6 class="text-white">
-            <a href="index.php" class="text-white">Home /</a>
-            <a href="my-orders.php" class="text-white">Mpke potudžbine /</a>
+            <a href="home.php" class="text-white">Home /</a>
+            <a href="myOrders.php" class="text-white">Moje potudžbine /</a>
             <a href="#" class="text-white">Vidi porudžbinu /</a>
 
         </h6>
@@ -43,7 +43,7 @@ $data = mysqli_fetch_array($validOrderData);
                     <div class="card">
                         <div class="card-header bg-primary">
                             <span class="text-white fs-4">Vidi porudžbinu</span>
-                            <a href="my-orders.php" class="btn btn-warning float-end">
+                            <a href="myOrders.php" class="btn btn-warning float-end">
                                 <i class="fa fa-replay"></i>Nazad
                             </a>
                         </div>
@@ -160,4 +160,4 @@ $data = mysqli_fetch_array($validOrderData);
         </div>
     </div>
 </div>
-<?php include "inc/footer.php"; ?>
+<?php include "../inc/footer.php"; ?>

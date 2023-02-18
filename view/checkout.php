@@ -1,14 +1,14 @@
 <?php
-include "functions/myfunctions.php";
-include "view/authenticate.php";
-include_once "controller/CartController.php";
-include "inc/header.php";
+include "../functions/myfunctions.php";
+include "authenticate.php";
+include_once "../controller/CartController.php";
+include "../inc/header.php";
 
 ?>
 <div class="py-3 bg-primary">
     <div class="container">
         <h6 class="text-white">
-            <a href="index.php" class="text-white">Home /</a>
+            <a href="home.php" class="text-white">Home /</a>
             <a href="checkout.php" class="text-white">Checkout</a>
         </h6>
     </div>
@@ -18,7 +18,7 @@ include "inc/header.php";
     <div class="container">
         <div class="card">
             <div class="card card-body shadow mt-3">
-                <form action="code/placeOrder.php" method="POST">
+                <form action="../code/placeOrder.php" method="POST">
                     <div class="row">
                         <div class="col-md-7">
                             <h5>Osnovni podaci</h5>
@@ -58,7 +58,7 @@ include "inc/header.php";
                                 <div class="card product_data shadow-sm mb-3">
                                     <div class="row align-items-center">
                                         <div class="col-md-2">
-                                            <img src="uploads/<?= $citem['image']; ?>" alt="" width="60px">
+                                            <img src="../uploads/<?= $citem['image']; ?>" alt="" width="60px">
                                         </div>
                                         <div class="col-md-5">
                                             <label><?= $citem['ime']; ?></label>
@@ -89,4 +89,4 @@ include "inc/header.php";
     </div>
 </div>
 </div>
-<?php include "inc/footer.php"; ?>
+<?php include "../inc/footer.php"; ?>

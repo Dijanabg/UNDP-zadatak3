@@ -1,6 +1,6 @@
 <?php
 //session_start();
-include "../db.php";
+include "../config/db.php";
 include "../functions/myfunctions.php";
 
 
@@ -21,9 +21,9 @@ if (isset($_POST['add_category_btn'])) {
 
     if ($cate_query_run) {
         move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $imgname);
-        redirect("Kategorija je dodata uspešno", "../categoryadd.php");
+        redirect("Kategorija je dodata uspešno", "../admin/categoryadd.php");
     } else {
-        redirect("Nešto je pošlo po zlu", "../categoryadd.php");
+        redirect("Nešto je pošlo po zlu", "../admin/categoryadd.php");
     }
 }elseif (isset($_POST['delete_category_btn'])) {
     $category_id = mysqli_real_escape_string($conn, $_POST['id']);
@@ -40,9 +40,9 @@ if (isset($_POST['add_category_btn'])) {
         if (file_exists("../uploads/" . $image)) {
             unlink("../uploads/" . $image);
         }
-        redirect("Kategorija je izbrisana uspešno", "../categoryadmin.php");
+        redirect("Kategorija je izbrisana uspešno", "../admin/categoryadmin.php");
     } else {
-        redirect("Nešto je pošlo po zlu", "../categoryadmin.php");
+        redirect("Nešto je pošlo po zlu", "../admin/categoryadmin.php");
     }
 } elseif (isset($_POST['update_category_btn'])) {
     $category_id = $_POST['id'];
@@ -54,8 +54,8 @@ if (isset($_POST['add_category_btn'])) {
 
     if ($new_image != "") {
         //$update_filename = $new_image;
-        $image_ext = pathinfo($old_image, PATHINFO_EXTENSION);
-        $update_filename = time() . '.' . $new_image;
+        $image_ext = pathinfo($new_image, PATHINFO_EXTENSION);
+        $update_filename = time() . '.' . $image_ext;
     } else {
         $update_filename = $old_image;
     }
@@ -67,14 +67,14 @@ if (isset($_POST['add_category_btn'])) {
 
     if ($update_query_run) {
         if ($_FILES['image']['name'] != "") {
-            move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $new_image);
+            move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $update_filename);
             if (file_exists("../uploads/" . $old_image)) {
                 unlink("../uploads/" . $old_image);
             }
         }
-        redirect("Kategorija je ažurirana uspešno", "../categoryedit.php?id=$category_id");
+        redirect("Kategorija je ažurirana uspešno", "../admin/categoryedit.php?id=$category_id");
     } else {
-        redirect("Nešto je pošlo po zlu", "../categoryedit.php?id=$category_id" );
+        redirect("Nešto je pošlo po zlu", "../admin/categoryedit.php?id=$category_id" );
     }
 }elseif (isset($_POST['add_product_btn'])) {
 
@@ -103,12 +103,12 @@ if (isset($_POST['add_category_btn'])) {
         if ($product_query_run) {
             move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $filename);
 
-            redirect("Proizvod je uspešno dodat","../productsadd.php");
+            redirect("Proizvod je uspešno dodat","../admin/productsadd.php");
         } else {
-            redirect("Nešto je krenulo po zlu", "../productsadd.php");
+            redirect("Nešto je krenulo po zlu", "../admin/productsadd.php");
         }
     } else {
-        redirect("Sva polja su obavezna", "productsadd.php");
+        redirect("Sva polja su obavezna", "../admin/productsadd.php");
     }
 }elseif (isset($_POST['delete_product_btn'])) {
     $product_id = mysqli_real_escape_string($conn, $_POST['id']);
@@ -125,11 +125,11 @@ if (isset($_POST['add_category_btn'])) {
         if (file_exists("../uploads/" . $image)) {
             unlink("../uploads/" . $image);
         }
-        redirect("Proizvod je uspešno obrisan", "../productsadmin.php");
+        redirect("Proizvod je uspešno obrisan", "../admin/productsadmin.php");
         //echo 200;
         //header('Location: .');
     } else {
-        redirect("Nešto je pošlo po zlu", "../productsadmin.php");
+        redirect("Nešto je pošlo po zlu", "../admin/productsadmin.php");
         //echo 500;
     }
 } elseif (isset($_POST['update_product_btn'])) {
@@ -167,8 +167,8 @@ if (isset($_POST['add_category_btn'])) {
                 unlink("../uploads/" . $old_image);
             }
         }
-        redirect( "Product Updated successfuly","../productsedit.php?id=$product_id");
+        redirect( "Product Updated successfuly","../admin/productsedit.php?id=$product_id");
     } else {
-        redirect("Something went wrong","../productsedit.php?id=$product_id");
+        redirect("Something went wrong","../admin/productsedit.php?id=$product_id");
     }
 }

@@ -2,13 +2,13 @@
 
 //echo "hello admin";
 //https://www.creative-tim.com/product/material-dashboard
-include_once "functions/myfunctions.php";
-include_once "code/auth.php";
-include_once "controller/AuthController.php";
+include_once "../functions/myfunctions.php";
+include_once "../code/auth.php";
+include_once "../controller/AuthController.php";
 $authenticated = new AuthController;
 $authenticated->admin($conn);
 
-include "admin/inc/header.php";
+include "inc/header.php";
 
 ?>
 <div class="container">
@@ -91,4 +91,4 @@ include "admin/inc/header.php";
         </div>
     </div>
 </div>
-<?php include "admin/inc/footer.php"; ?>
+<?php include "inc/footer.php"; ?>

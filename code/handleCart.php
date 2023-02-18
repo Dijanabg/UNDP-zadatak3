@@ -1,6 +1,6 @@
 <?php
 
-include "../db.php";
+include "../config/db.php";
 include_once "../functions/myfunctions.php";
 
 if (isset($_SESSION['auth']) == true) {

@@ -1,8 +1,8 @@
 <?php
-include "functions/myfunctions.php";
-include "inc/header.php";
-include_once "controller/TableController.php";
-include_once "controller/UserController.php";
+include "../functions/myfunctions.php";
+include "../inc/header.php";
+include_once "../controller/TableController.php";
+include_once "../controller/UserController.php";
 
 if (isset($_GET['products'])) {
     $product_id = $_GET['products'];
@@ -14,7 +14,7 @@ if (isset($_GET['products'])) {
         <div class="py-3 bg-secondary fs-4">
             <div class="container">
                 <h6 class="text-white">
-                    <a class="text-white fs-4" href="index.php">Home /</a>
+                    <a class="text-white fs-4" href="home.php">Home /</a>
                     <a class="text-white fs-4" href="category.php">Kategorije /</a>
                     <?= $product['ime']; ?>
                 </h6>
@@ -25,7 +25,7 @@ if (isset($_GET['products'])) {
                 <div class="row topview">
                     <div class="col-md-4">
                         <div class="shadow px-2">
-                            <img src="uploads/<?= $product['image'] ?>" alt="Product image" class="w-250px" height="250px" >
+                            <img src="../uploads/<?= $product['image'] ?>" alt="Product image" class="w-250px" height="250px" >
                         </div>
 
                     </div>
@@ -91,4 +91,4 @@ if (isset($_GET['products'])) {
 } else {
     echo "Nešto je pošlo po zlu";
 }
-include "inc/footer.php";
+include "../inc/footer.php";

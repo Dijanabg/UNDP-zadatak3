@@ -36,7 +36,7 @@ $(document).ready(function () {
 
         request=$.ajax({
             method: "POST",
-            url: "code/handleCart.php",
+            url: "../code/handleCart.php",
             data: {
                 "prodId": prodId,
                 "prodQty":prodQty,
@@ -74,7 +74,7 @@ $(document).ready(function () {
         //$request= 
         $.ajax({
                     method: "POST",
-                    url: "code/handleCart.php",
+                    url: "../code/handleCart.php",
                     data: {
                         "prodId": prodId,
                         "prodQty": prodQty,
@@ -125,7 +125,7 @@ $(document).ready(function () {
         //alert(cart_id);
         $.ajax({
             method: "POST",
-            url: "code/handleCart.php",
+            url: "../code/handleCart.php",
             data: {
                 "cartId": cartId,
                 "scope": "delete"

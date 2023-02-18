@@ -1,8 +1,8 @@
 <?php
 
 
-include_once "admin/inc/header.php";
-include_once "admin/inc/sidebar.php";
+include_once "inc/header.php";
+include_once "inc/sidebar.php";
 
 ?>
 <div class="container">
@@ -13,7 +13,7 @@ include_once "admin/inc/sidebar.php";
                     <h4>Unos nove kategorije</h4>
                 </div>
                 <div class="card-body">
-                    <form action="code/admincode.php" method="POST" enctype="multipart/form-data">
+                    <form action="../code/admincode.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="">Ime</label>
@@ -40,5 +40,5 @@ include_once "admin/inc/sidebar.php";
 </div>
 
 
-<?php include "admin/inc/footer.php";
+<?php include "inc/footer.php";
 ?>

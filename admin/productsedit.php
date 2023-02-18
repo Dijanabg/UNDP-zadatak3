@@ -1,9 +1,9 @@
 
 <?php
-include_once "functions/myfunctions.php";
-include_once "admin/inc/header.php";
+include_once "../functions/myfunctions.php";
+include_once "inc/header.php";
 
-include_once "controller/TableController.php"
+include_once "../controller/TableController.php"
 ?>
 <div class="container">
     <div class="row">
@@ -25,7 +25,7 @@ include_once "controller/TableController.php"
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form action="code/admincode.php" method="POST" enctype="multipart/form-data">
+                            <form action="../code/admincode.php" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-12  mb-2">
                                         <label for="">Izaberi kategoriju</label>
@@ -74,7 +74,7 @@ include_once "controller/TableController.php"
                                         <input type="hidden" name="old_image" value=" <?= $data['image']; ?>">
                                         <input type="file" name="image" class="form-control mb-2">
                                         <label class="mb-0" for="">Trenutna slika</label>
-                                        <img src="uploads/<?= $data['image']; ?>" alt="Product image" width="50px" height="50px">
+                                        <img src="../uploads/<?= $data['image']; ?>" alt="Product image" width="50px" height="50px">
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -106,5 +106,5 @@ include_once "controller/TableController.php"
 </div>
 
 
-<?php include "admin/inc/footer.php";
+<?php include "inc/footer.php";
 ?>

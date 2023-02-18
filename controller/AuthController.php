@@ -1,6 +1,6 @@
 <?php
-include "code/auth.php";
-include "db.php";
+include "../code/auth.php";
+include "../config/db.php";
 class AuthController{
 
 public function __construct(){
@@ -18,7 +18,7 @@ public function admin(mysqli $conn){
             redirect("Nemate administratorska ovlascenja", "index.php");
         }
     }
-    public function adminBtn(mysqli $conn){
+public function adminBtn(mysqli $conn){
         $userId = $_SESSION['auth_user']['id'];
         $query = "SELECT id, role_as FROM users WHERE id='$userId' AND role_as='1' LIMIT 1 ";
         $result = $conn->query($query);

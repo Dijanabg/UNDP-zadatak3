@@ -4,7 +4,7 @@
 //     session_start();
 // }
 
-include "db.php";
+include "../config/db.php";
 class UserController{
 public function getAllActive($table)
 {

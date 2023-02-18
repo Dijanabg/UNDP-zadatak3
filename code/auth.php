@@ -1,9 +1,9 @@
 <?php
 
-include "db.php";
+include "../config/db.php";
 
-include_once "controller/RegisterController.php";
-include_once "controller/LoginController.php";
+include_once "../controller/RegisterController.php";
+include_once "../controller/LoginController.php";
 
 $checkLog = new LoginController;
 if (isset($_POST['login_btn'])) {

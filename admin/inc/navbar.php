@@ -7,7 +7,7 @@
   <div class="container-fluid">
       <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="../view/home.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="category.php">Kategorije</a>

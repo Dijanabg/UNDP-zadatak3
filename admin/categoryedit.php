@@ -1,8 +1,8 @@
 <?php
-include_once "functions/myfunctions.php";
-include_once "admin/inc/header.php";
+include_once "../functions/myfunctions.php";
+include_once "inc/header.php";
 
-include_once "controller/TableController.php"
+include_once "../controller/TableController.php"
 
 ?>
 <div class="container">
@@ -22,7 +22,7 @@ include_once "controller/TableController.php"
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form action="code/admincode.php" method="POST" enctype="multipart/form-data">
+                            <form action="../code/admincode.php" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="hidden" name="id" value="<?= $data['id']; ?>">
@@ -39,7 +39,7 @@ include_once "controller/TableController.php"
                                         <input type="file" name="image" class="form-control">
                                         <label for="">Trenutna slika</label>
                                         <input type="hidden" name="old_image" value="<?= $data['image']; ?>">
-                                        <img src="uploads/<?= $data['image']; ?>" height="50px" width="50px" alt="">
+                                        <img src="../uploads/<?=$data['image']; ?>" height="50px" width="50px" alt="">
                                     </div>
                                     
                                     <div class="col-md-12">
@@ -63,5 +63,5 @@ include_once "controller/TableController.php"
 </div>
 
 
-<?php include "admin/inc/footer.php";
+<?php include "inc/footer.php";
 ?>

@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "../config/db.php";
 class OrderController{
     function getOrders()
 {

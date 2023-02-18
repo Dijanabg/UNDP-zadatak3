@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "../config/db.php";
 class LoginController{
 
 public function login($email, $password, mysqli $conn){
@@ -26,10 +26,10 @@ public function login($email, $password, mysqli $conn){
             $_SESSION['role_as'] = $role_as;
     
             if ($role_as == 1) {
-                redirect("Welcome to dashboard", "admin.php");
+                redirect("Welcome to dashboard", "../admin/admin.php");
                 
             } else {
-                redirect("Logged in successfuly", "index.php");
+                redirect("Logged in successfuly", "home.php");
             }
         } else {
             redirect("Invalid Credentials", "login.php");

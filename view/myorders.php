@@ -1,14 +1,14 @@
 <?php
-include_once "functions/myfunctions.php";
-include "view/authenticate.php";
-include_once "controller/OrderController.php";
-include "inc/header.php";
+include_once "../functions/myfunctions.php";
+include "authenticate.php";
+include_once "../controller/OrderController.php";
+include "../inc/header.php";
 
 ?>
 <div class="py-3 bg-primary">
     <div class="container">
         <h6 class="text-white">
-            <a href="index.php" class="text-white">Home /</a>
+            <a href="home.php" class="text-white">Home /</a>
             My porudžbine /
         </h6>
     </div>
@@ -63,4 +63,4 @@ include "inc/header.php";
         </div>
     </div>
 </div>
-<?php include "inc/footer.php"; ?>
+<?php include "../inc/footer.php"; ?>
