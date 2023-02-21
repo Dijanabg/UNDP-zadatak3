@@ -14,7 +14,7 @@ class OrderController{
 function getAllOrders()
 {
     global $conn;
-    $query = "SELECT * FROM orders WHERE status='0' ";
+    $query = "SELECT * FROM orders ";
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
