@@ -18,13 +18,13 @@
         <?php  
         if (isset($_SESSION['auth'])) 
         { 
-        ?>
+        ?> <li><a class="nav-link fs-3" href="cart.php">Korpa</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-              <?php echo $_SESSION['auth_user']['email'] ?>
+              <?php echo $_SESSION['auth_user']['ime'] ?>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item fs-3" href="cart.php">Korpa</a></li>
+                
                 
                 <li><a class="dropdown-item fs-3" href="logout.php">Izloguj se</a></li>
               </ul>

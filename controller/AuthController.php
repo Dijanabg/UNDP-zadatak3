@@ -15,7 +15,7 @@ public function admin(mysqli $conn){
         if($result->num_rows == 1){
             return true;
         }else{
-            redirect("Nemate administratorska ovlascenja", "index.php");
+            redirect("Nemate administratorska ovlascenja", "home.php");
         }
     }
 public function adminBtn(mysqli $conn){
@@ -32,7 +32,7 @@ public function adminBtn(mysqli $conn){
 private function checkLoggedIn()
     {
         if (!isset($_SESSION['auth'])) {
-            redirect("Ulogujte se da bi videli ovu stranu", "login.php");
+            redirect("Ulogujte se da bi videli ovu stranu", "../view/login.php");
             return false;
         } else {
             return true;

@@ -13,6 +13,13 @@ public function getAllActive($table)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getAllTrending()
+{
+    global $conn;
+    $query = "SELECT * FROM products WHERE trending='1'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
 function getStatusActive($table, $slug)
 {
     global $conn;

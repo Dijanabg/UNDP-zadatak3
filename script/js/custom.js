@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('.carousel').carousel()
     $(document).on('click', '.increment-btn', function (e) {
         e.preventDefault();
         var qty = $(this).closest('.product_data').find('.input-qty').val();
@@ -143,4 +144,5 @@ $(document).ready(function () {
         });
     });
 });
+
     
