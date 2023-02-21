@@ -104,25 +104,28 @@ $data = mysqli_fetch_array($validOrderData);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $userId = $_SESSION['auth_user']['id'];
-                                            $order_query = "SELECT o.id as oid, o.trackingNo, o.userId, oi.*,oi.kolicina as ordersqty, p.* FROM orders o, order_items oi, products p WHERE o.userId='$userId' AND oi.orderId=o.id AND p.id=oi.prodId AND o.trackingNo='$trackingNo' ";
-                                            $order_query_run = mysqli_query($conn, $order_query);
-                                            if (mysqli_num_rows($order_query_run) > 0) {
-                                                foreach ($order_query_run as $item) {
+                                            if (isset($_GET['t'])) {
+                                            $trackingNo = $_GET['t'];
+                                            $viewOrd = new OrderController;
+                                            $viewOrde = $viewOrd->getOrderDetails($trackingNo);
+                                            $viewOrder = mysqli_fetch_array($viewOrde);
+                                            if ($viewOrder >0) {
+                                                foreach($viewOrde as $item){
+                                                    //$viewOrde = mysqli_fetch_array($viewOrde);
                                             ?>
                                                     <tr>
                                                         <td class="align-middle">
-                                                            <img src="uploads/<?= $item['image']; ?>" alt="" width="50px" height="50px">
+                                                            <img src="../uploads/<?= $item['image']; ?>" alt="" width="50px" height="50px">
                                                         </td>
                                                         <td class="align-middle">
                                                             <?= $item['cena']; ?>
                                                         </td>
                                                         <td class="align-middle">
-                                                            <?= $item['ordersqty']; ?>
+                                                            <?= $item['oiKolicina']; ?>
                                                         </td>
                                                     </tr>
                                             <?php
-                                                }
+                                                }}
                                             }
                                             ?>
                                         </tbody>

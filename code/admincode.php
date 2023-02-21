@@ -173,19 +173,16 @@ if (isset($_POST['add_category_btn'])) {
     } else {
         redirect("Nešto nije u redu","../admin/productsedit.php?id=$product_id");
     }
-}elseif (isset($_POST['update_order_btn'])) {
+} elseif (isset($_POST['update_order_btn'])) {
     
-    $trackNo = $_POST['trackingNo'];
+        $trackNo = $_POST['trackingNo'];
+        
+        $orderStatus = $_POST['status'];
     
-    $order_status = $_POST['status'];
-
-    $updateOrder_query = "UPDATE orders SET status ='$order_status' WHERE trackingNo='$trackNo' ";
-    $updateOrder_query_run = mysqli_query($conn, $updateOrder_query);
-    if($updateOrder_query_run){
-   redirect ("Status porudžbine je ažuriran uspešno", "../admin/orders.php");
-}else{
-    redirect ("Nešto nije u redu", "../admin/orders.php");
+        $updateOrder_query = "UPDATE orders SET status ='$orderStatus' WHERE trackingNo='$trackNo' ";
+        $updateOrder_query_run = mysqli_query($conn, $updateOrder_query);
+       redirect("Order status Updated successfuly", "../admin/orders.php");
 }
-}else {
+else {
     header('Location: ../view/home.pxp');
 }

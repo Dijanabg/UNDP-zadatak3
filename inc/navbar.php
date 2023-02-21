@@ -12,13 +12,17 @@
         <li class="nav-item">
           <a class="nav-link" href="category.php">Kategorije</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
+        
         <?php  
         if (isset($_SESSION['auth'])) 
         { 
-        ?> <li><a class="nav-link fs-3" href="cart.php">Korpa</a></li>
+        ?> 
+        <li>
+          <a class="nav-link fs-3" href="cart.php">Korpa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myOrders.php">Moje porudžbine</a>
+        </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
               <?php echo $_SESSION['auth_user']['ime'] ?>
