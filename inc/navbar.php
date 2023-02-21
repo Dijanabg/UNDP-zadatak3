@@ -1,6 +1,6 @@
 <nav class="navbar fs-3 navbar-expand-lg navbar-dark bg-body-dark bg-dark shadow">
   <div class="container">
-    <a class="navbar-brand fs-3 " href="#">Navbar</a>
+    <a class="navbar-brand bg-danger fs-3 " href="#"> .HELL SHOP. </a><img src="../uploads/favicon.ico" alt="">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,7 +40,7 @@
                     $adminLog=$admin->adminBtn($conn);
                     
                     if($adminLog == true){?>
-                    <a href="../admin/admin.php" class=" nav-link">Admin panel</a>
+                    <a href="../admin/admin.php" class="  bg-danger text-white nav-link">Admin panel</a>
             </li>
                     <?php }?>
        </h6>

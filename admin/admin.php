@@ -22,14 +22,14 @@ include "inc/header.php";
       <i class="material-icons opacity-10">weekend</i>
     </div>
     <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize">Bookings</p>
+      <p class="text-sm mb-0 text-capitalize">Kupovine</p>
       <h4 class="mb-0">281</h4>
     </div>
   </div>
 
   <hr class="dark horizontal my-0">
   <div class="card-footer p-3">
-    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>nego prošle nedelje</p>
   </div>
 </div>
 
@@ -39,14 +39,14 @@ include "inc/header.php";
       <i class="material-icons opacity-10">leaderboard</i>
     </div>
     <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize">Today's Users</p>
+      <p class="text-sm mb-0 text-capitalize">Današnjih posetilaca</p>
       <h4 class="mb-0">2,300</h4>
     </div>
   </div>
 
   <hr class="dark horizontal my-0">
   <div class="card-footer p-3">
-    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
+    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>nego prethodnog meseca</p>
   </div>
 </div>
 
@@ -58,14 +58,14 @@ include "inc/header.php";
       <i class="material-icons opacity-10">store</i>
     </div>
     <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize ">Revenue</p>
+      <p class="text-sm mb-0 text-capitalize ">Zarada</p>
       <h4 class="mb-0 ">34k</h4>
     </div>
   </div>
 
   <hr class="horizontal my-0 dark">
   <div class="card-footer p-3">
-    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder">+1% </span>than yesterday</p>
+    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder">+1% </span>nego juče</p>
   </div>
 </div>
 
@@ -75,14 +75,14 @@ include "inc/header.php";
       <i class="material-icons opacity-10">person_add</i>
     </div>
     <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize ">Followers</p>
+      <p class="text-sm mb-0 text-capitalize ">Pratilaca</p>
       <h4 class="mb-0 ">+91</h4>
     </div>
   </div>
 
   <hr class="horizontal my-0 dark">
   <div class="card-footer p-3">
-    <p class="mb-0 ">Just updated</p>
+    <p class="mb-0 ">Upravo ažurirano</p>
   </div>
 </div>
 

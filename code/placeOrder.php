@@ -41,7 +41,7 @@ if (isset($_SESSION['auth']) == true) {
                 $kolicina = $citem['prodQty'];
                 $cena = $citem['prodajnaCena'];
 
-                $insert_items_query = "INSERT INTO order_items (orderId, prodId, kolicina, cena) VALUES ('$orderId', '$prodId', '$kolicina', '$cena')";
+                $insert_items_query = "INSERT INTO order_items (orderId, prodId, oiKolicina, cena) VALUES ('$orderId', '$prodId', '$kolicina', '$cena')";
                 $insert_items_query_run = mysqli_query($conn, $insert_items_query);
 
                 $product_query = "SELECT * FROM products WHERE id='$prodId'";

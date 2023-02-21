@@ -24,12 +24,12 @@ if (isset($_GET['t'])) {
 }
 $data = mysqli_fetch_array($validOrderData);
 ?>
-<div class="py-3 bg-primary">
+<div class="py-3 bg-secondary">
     <div class="container">
-        <h6 class="text-white">
-            <a href="home.php" class="text-white">Home /</a>
-            <a href="myOrders.php" class="text-white">Moje potudžbine /</a>
-            <a href="#" class="text-white">Vidi porudžbinu /</a>
+        <h6 class="text-white fs-4">
+            <a href="home.php" class="text-white fs-4">Home /</a>
+            <a href="myOrders.php" class="text-white fs-4">Moje potudžbine /</a>
+            <a href="#" class="text-white fs-4">Vidi porudžbinu /</a>
 
         </h6>
     </div>

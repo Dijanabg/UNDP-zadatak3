@@ -15,7 +15,7 @@ include_once "../controller/TableController.php"
                 $product = getById('products', $id);
 
                 if (mysqli_num_rows($product) > 0) {
-                    $data = mysqli_fetch_array($product);
+                    $data = mysqli_fetch_array($product); 
 
             ?>
                     <div class="card">

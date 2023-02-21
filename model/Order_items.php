@@ -5,8 +5,8 @@ class Order_items{
 
     public $id;
     public Order $orderId;
-    public $prodId;
-    public $kolicina;
+    public Products $prodId;
+    public $oiKolicina;
 
     public $cena;
 

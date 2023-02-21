@@ -5,11 +5,11 @@ include_once "../controller/CartController.php";
 include "../inc/header.php";
 
 ?>
-<div class="py-3 bg-primary">
+<div class="py-3 bg-secondary">
     <div class="container">
-        <h6 class="text-white">
-            <a href="home.php" class="text-white">Home /</a>
-            <a href="checkout.php" class="text-white">Checkout</a>
+        <h6 class="text-white fs-4">
+            <a href="home.php" class="text-white fs-4">Home /</a>
+            <a href="checkout.php" class="text-white fs-4">Checkout</a>
         </h6>
     </div>
 </div>

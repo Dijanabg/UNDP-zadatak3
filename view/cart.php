@@ -8,7 +8,7 @@ include "../inc/header.php";
 
 
 ?>
-<div class="py-3 bg-primary">
+<div class="py-3 bg-secondary">
     <div class="container">
         <h6 class="text-white">
             <a href="home.php" class="text-white">Home /</a>

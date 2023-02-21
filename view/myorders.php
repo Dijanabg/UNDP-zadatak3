@@ -5,11 +5,11 @@ include_once "../controller/OrderController.php";
 include "../inc/header.php";
 
 ?>
-<div class="py-3 bg-primary">
+<div class="py-3 bg-secondary">
     <div class="container">
-        <h6 class="text-white">
-            <a href="home.php" class="text-white">Home /</a>
-            My porudžbine /
+        <h6 class="text-white fs-4">
+            <a href="home.php" class="text-white fs-4">Home /</a>
+            Moje porudžbine /
         </h6>
     </div>
 </div>

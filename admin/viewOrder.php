@@ -137,7 +137,7 @@ if (isset($_GET['t'])) {
                                     <label class="fw-bold">Status</label>
                                     <div class="mb-3">
                                         <form action="../code/admincode.php" method="POST">
-                                            <input type="hidden" class="trackingNo" value="<?= $data['trackingNo'] ?>">
+                                            <input type="hidden" class="trackingNo" name="trackingNo" value="<?= $data['trackingNo'] ?>">
                                             <select name="status" class="form-select">
                                                 <option value="0" <?= $data['status'] == 0 ? "selected" : "" ?>>U procesu</option>
                                                 <option value="1" <?= $data['status'] == 1 ? "selected" : "" ?>>Završeno</option>

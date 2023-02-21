@@ -44,7 +44,7 @@ include "../inc/slider.php";
         </div>
         <div class="col-md-8">
                 <div class="row ">
-                    <h1 class="col-md-12 mb-5 mt-5">Trending Products</h1>
+                    <h1 class="col-md-12 mb-5 mt-5">Popularni proizvodi</h1>
                     <hr>
                     <?php
                     $prodTrending =new UserController;
@@ -79,11 +79,13 @@ include "../inc/slider.php";
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="row">
-                <h4>About us</h4>
+                <h4>O nama</h4>
                 <div class="underline mb-2"></div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi rerum voluptatibus eaque excepturi quisquam reprehenderit voluptates maiores aperiam beatae quos vel in officia ab sunt eius quaerat provident, distinctio fuga.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi rerum voluptatibus eaque excepturi quisquam reprehenderit voluptates maiores aperiam beatae quos vel in officia ab sunt eius quaerat provident, distinctio fuga.
-                    <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi rerum voluptatibus eaque excepturi quisquam reprehenderit voluptates maiores aperiam beatae quos vel in officia ab sunt eius quaerat provident, distinctio fuga.
+                <p class="fs-4">Bavimo se proizvodnjom i prodajom bicikala, distribucijom raznovrsne sportske opreme i pružanjem specijalizovanih servisnih usluga. Naš osnovni cilj je vrhunski kvalitet ponude i usluga i maksimalno zadovoljstvo korisnika.</p>
+                <p class="fs-4">U našoj fabrici u Kruševcu, proizvodimo bicikle pod sopstvenim robnim markama Polar i Booster. Takođe, za mnogobrojne partnere u zemlji i inostranstvu proizvodimo bicikle pod drugim robnim markama, na bazi OEM usluge.
+
+Uvoznik smo i distributer poznatih robnih marki: Scott, Continental, Elan, Nordica, Salewa, Dainese, Völkl, Dalbello, Oakley, Look, Syncros, Fizik, Kettler, Elite, Brooks, Body Sculpture, Saris, Selle Royal, Rollerblade, Infini, Swiss Stop, Weldtite, Polisport, Poivre Blanc, Northwave, Uvex, Geosmina, Zefal i drugih.
+                    <br>U našoj veleprodajnoj mreži sarađujemo sa više od 200 dilera u Srbiji, Bosni i Hercegovini, Makedoniji i Crnoj Gori i drugim evropskim zemljama.
                 </p>
 
             </div>
