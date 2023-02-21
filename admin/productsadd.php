@@ -63,9 +63,13 @@ include_once "../controller/TableController.php"
                                     <label class="mb-0" for="">Količina</label>
                                     <input type="text" required name="kolicina" placeholder="Unesi količinu" class="form-control mb-2">
                                 </div>
-                                <div class="col-md-6  mb-2">
+                                <div class="col-md-3  mb-2">
                                     <label class="mb-0" for="">Status</label><br>
                                     <input type="checkbox" name="status">
+                                </div>
+                                <div class="col-md-3 mb-2">
+                                    <label class="mb-0" for="">Trending</label><br>
+                                    <input type="checkbox" name="trending">
                                 </div>
                             </div>
 

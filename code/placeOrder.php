@@ -13,7 +13,7 @@ if (isset($_SESSION['auth']) == true) {
         $pincode = validateInput($conn, $_POST['pincode']);
         $adresa = validateInput($conn, $_POST['adresa']);
         $payMode = validateInput($conn, $_POST['payMode']);
-        $payId = validateInput($conn, $_POST['payId']);
+        //$payId = validateInput($conn, $_POST['payId']);
         if ($imePrezime == "" || $email == "" || $telefon == "" || $pincode == "" || $adresa == "") {
             redirect("Sva polja su obavezna", "checkout.php");
             exit(0);
@@ -32,7 +32,7 @@ if (isset($_SESSION['auth']) == true) {
         $trackingNo = "dijanacode" . rand(1111, 9999) . substr($telefon, 2);
         echo $trackingNo;
         //ubacivanje u tabelu orders
-        $insert_query = "INSERT INTO orders (trackingNo, userId, imePrezime, email, telefon, adresa, pincode, totalPrice, payMode, payId) VALUE ('$trackingNo', '$userId', '$imePrezime', '$email', '$telefon', '$adresa', '$pincode', '$totalPrice', '$payMode', '$payId')";
+        $insert_query = "INSERT INTO orders (trackingNo, userId, imePrezime, email, telefon, adresa, pincode, totalPrice, payMode) VALUE ('$trackingNo', '$userId', '$imePrezime', '$email', '$telefon', '$adresa', '$pincode', '$totalPrice', '$payMode')";
         $insert_query_run = mysqli_query($conn, $insert_query);
         if ($insert_query_run>0) {
             $orderId = mysqli_insert_id($conn);
@@ -41,7 +41,7 @@ if (isset($_SESSION['auth']) == true) {
                 $kolicina = $citem['prodQty'];
                 $cena = $citem['prodajnaCena'];
 
-                $insert_items_query = "INSERT INTO order_items (id, prodId, kolicina, cena) VALUES ('$orderId', '$prodId', '$kolicina', '$cena')";
+                $insert_items_query = "INSERT INTO order_items (orderId, prodId, kolicina, cena) VALUES ('$orderId', '$prodId', '$kolicina', '$cena')";
                 $insert_items_query_run = mysqli_query($conn, $insert_items_query);
 
                 $product_query = "SELECT * FROM products WHERE id='$prodId'";

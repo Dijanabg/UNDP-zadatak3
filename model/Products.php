@@ -9,6 +9,7 @@ class Products{
     public $prodajnaCena;
     public $image;
     public $status;
+    public $trending;
     public $kolicina;
     public Category $categoryId;
 }

@@ -81,9 +81,13 @@ include_once "../controller/TableController.php"
                                             <label class="mb-0" for="">Kolicina</label>
                                             <input type="text" required name="kolicina" value="<?= $data['kolicina']; ?>" placeholder="Unesi kolicinu" class="form-control mb-2">
                                         </div>
-                                        <div class="col-md-6  mb-2">
+                                        <div class="col-md-3  mb-2">
                                             <label class="mb-0" for="">Status</label><br>
                                             <input type="checkbox" name="status" <?= $data['status'] == '0' ? '' : 'checked'; ?>>
+                                        </div>
+                                        <div class="col-md-3 mb-2">
+                                            <label class="mb-0" for="">Trending</label><br>
+                                            <input type="checkbox" name="trending" <?= $data['trending'] == '0' ? '' : 'checked'; ?>>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -95,7 +99,7 @@ include_once "../controller/TableController.php"
                     </div>
             <?php
                 } else {
-                    echo "Product not found";
+                    echo "Proizvod nije pronadjen";
                 }
             } else {
                 echo "Id missing from url";

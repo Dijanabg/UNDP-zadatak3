@@ -2,7 +2,7 @@
 
 class Order{
     public $id;
-    public $tracking_no;
+    public $trackingNo;
     public User $userId;
     public $imePrezime;
     public $email;

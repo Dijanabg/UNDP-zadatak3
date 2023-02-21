@@ -28,11 +28,12 @@ include_once "../controller/TableController.php";
                                 foreach ($products as $item) { ?>
                                     <tr>
                                         <td><?= $item['id']; ?></td>
-                                        <td><?= $item['ime']; ?></td>
+                                        <td class="text-sm"><?= $item['ime']; ?></td>
                                         <td>
                                             <img src="../uploads/<?= $item['image']; ?>" width="50px" height="50px" alt="<?= $item['ime']; ?>">
                                         </td>
-                                        <td><?= $item['status'] == '0' ? "Visible" : "Hidden" ?></td>
+                                        <td class="text-sm"><?= $item['status'] == '0' ? "Visible" : "Hidden" ?></td>
+                                        <td class="text-sm"><?= $item['trending'] == '0' ? "No trending" : "Trending" ?></td>
                                         <td>
                                             <a href="productsedit.php?id=<?= $item['id']; ?>" class="btn btn-sm bg-gradient-primary">Ažuriraj</a>
                                         </td>
@@ -45,7 +46,7 @@ include_once "../controller/TableController.php";
                                     </tr>
                             <?php  }
                             } else {
-                                echo "No records found";
+                                echo "Nema dostupnih podataka";
                             }
                             ?>
 

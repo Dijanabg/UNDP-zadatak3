@@ -9,11 +9,11 @@ include_once "../controller/OrderController.php";
 ?>
 
 
-<div class="py-5">
+<div class="py-2">
     <div class="container">
         <div class="card card-body shadow mt-3">
             <div class="row">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-gradient-primary">
                     <h4>Orders</h4>
                 </div>
                 <div class="col-md-12">
@@ -41,7 +41,7 @@ include_once "../controller/OrderController.php";
                                         <td><?= $item['trackingNo']; ?></td>
                                         <td><?= $item['totalPrice']; ?></td>
                                         <td><?= $item['created_at']; ?></td>
-                                        <td><a href="viewOrder.php?t=<?= $item['trackingNo']; ?>" class="btn btn-primary">Vidi detalje</a></td>
+                                        <td><a href="viewOrder.php?t=<?= $item['trackingNo']; ?>" class="btn bg-gradient-primary">Vidi detalje</a></td>
                                     </tr>
                                 <?php
                                 }

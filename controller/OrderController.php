@@ -28,4 +28,23 @@ function checkTrackingNoValid($trackingNo)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function adminCheckTrackingNoValid($trackingNo)
+{
+    global $conn;
+    $query = "SELECT * FROM orders WHERE trackingNo='$trackingNo'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
+function getOrderDetails($trackingNo){
+    global $conn;
+    $order_query = "SELECT * FROM orders o, order_items oi, products p WHERE  oi.orderId=o.id AND p.id=oi.prodId AND o.trackingNo='$trackingNo' ";
+    $order_query_run = mysqli_query($conn, $order_query);
+    return $order_query_run;
+}
+function getstatus($trackNo){
+    global $conn;
+    $statusQuery = "SELECT status FROM orders WHERE trackingNo='$trackNo'";
+    $statusQuery_run = mysqli_query($conn, $statusQuery);
+    return $statusQuery_run;
+}
 }

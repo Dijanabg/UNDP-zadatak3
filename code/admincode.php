@@ -87,6 +87,7 @@ if (isset($_POST['add_category_btn'])) {
     $prodajnaCena = $_POST['prodajnaCena'];
     $kolicina = $_POST['kolicina'];
     $status = isset($_POST['status']) ? '1' : '0';
+    $trending = isset($_POST['trending']) ? '1' : '0';
 
     $image = $_FILES['image']['name'];
 
@@ -97,7 +98,7 @@ if (isset($_POST['add_category_btn'])) {
 
     if ($ime != "" && $kratkiOpis != "" && $opis != "") {
 
-        $product_query = "INSERT INTO products (categoryId,ime, kratkiOpis, opis, orginalnaCena, prodajnaCena, kolicina, status, image ) VALUES ('$categoryId','$ime','$kratkiOpis', '$opis', '$orginalnaCena', '$prodajnaCena', '$kolicina', '$status', '$filename' )";
+        $product_query = "INSERT INTO products (categoryId,ime, kratkiOpis, opis, orginalnaCena, prodajnaCena, kolicina, status,trending, image ) VALUES ('$categoryId','$ime','$kratkiOpis', '$opis', '$orginalnaCena', '$prodajnaCena', '$kolicina', '$status', '$trending', '$filename' )";
         $product_query_run = mysqli_query($conn, $product_query);
 
         if ($product_query_run) {
@@ -143,6 +144,7 @@ if (isset($_POST['add_category_btn'])) {
     $prodajnaCena = $_POST['prodajnaCena'];
     $kolicina = $_POST['kolicina'];
     $status = isset($_POST['status']) ? '1' : '0';
+    $trending = isset($_POST['trending']) ? '1' : '0';
 
     $path = "../uploads";
 
@@ -157,7 +159,7 @@ if (isset($_POST['add_category_btn'])) {
         $update_filename = $old_image;
     }
     $path = "../uploads";
-    $update_product_query = "UPDATE products SET categoryId='$category_id',ime='$ime', kratkiOpis='$kratkiOpis', opis='$opis', orginalnaCena='$orginalnaCena', prodajnaCena='$prodajnaCena', kolicina='$kolicina', status='$status', image='$update_filename' WHERE id='$product_id'";
+    $update_product_query = "UPDATE products SET categoryId='$category_id',ime='$ime', kratkiOpis='$kratkiOpis', opis='$opis', orginalnaCena='$orginalnaCena', prodajnaCena='$prodajnaCena', kolicina='$kolicina', status='$status', trending='$trending', image='$update_filename' WHERE id='$product_id'";
     $update_product_query_run = mysqli_query($conn, $update_product_query);
 
     if ($update_product_query_run) {
@@ -167,8 +169,23 @@ if (isset($_POST['add_category_btn'])) {
                 unlink("../uploads/" . $old_image);
             }
         }
-        redirect( "Product Updated successfuly","../admin/productsedit.php?id=$product_id");
+        redirect( "Proizvod je ažuriran","../admin/productsedit.php?id=$product_id");
     } else {
-        redirect("Something went wrong","../admin/productsedit.php?id=$product_id");
+        redirect("Nešto nije u redu","../admin/productsedit.php?id=$product_id");
     }
+}elseif (isset($_POST['update_order_btn'])) {
+    
+    $trackNo = $_POST['trackingNo'];
+    
+    $order_status = $_POST['status'];
+
+    $updateOrder_query = "UPDATE orders SET status ='$order_status' WHERE trackingNo='$trackNo' ";
+    $updateOrder_query_run = mysqli_query($conn, $updateOrder_query);
+    if($updateOrder_query_run){
+   redirect ("Status porudžbine je ažuriran uspešno", "../admin/orders.php");
+}else{
+    redirect ("Nešto nije u redu", "../admin/orders.php");
+}
+}else {
+    header('Location: ../view/home.pxp');
 }
