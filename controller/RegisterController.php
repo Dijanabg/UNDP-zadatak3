@@ -3,8 +3,8 @@ include "../config/db.php";
 include_once "../code/auth.php";
 class RegisterController{
 
-    public function registration($ime, $email, $password, mysqli $conn){
-        $query = "INSERT INTO users (ime, email, password) VALUES ('$ime', '$email', '$password')";
+    public function registration($ime, $email, $hashedpassword, mysqli $conn){
+        $query = "INSERT INTO users (ime, email, password) VALUES ('$ime', '$email', '$hashedpassword')";
         $result = $conn->query($query);
         return $result;
     }

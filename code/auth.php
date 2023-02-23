@@ -28,7 +28,14 @@ if(isset($_POST['register_btn'])){
     $email = validateInput($conn, $_POST['email']);
     $password = validateInput($conn, $_POST['password']);
     $cpass = validateInput($conn, $_POST['cpass']);
+    $encryption_key = 'di'; // Replace with your own secret encryption key
 
+    $options = [
+        'salt' => $encryption_key, // Use the encryption key as the salt
+        'cost' => 12, // Choose a suitable cost factor
+    ];
+    
+    $hashedpassword = password_hash($password, PASSWORD_BCRYPT, $options);
     $register = new RegisterController;
 
     $resultpass = $register->confirmPassword($password, $cpass, $conn);
@@ -40,7 +47,7 @@ if(isset($_POST['register_btn'])){
 
             redirect("Email je vec registrovan", "register.php");
         } else {
-            $regquery = $register->registration($ime, $email, $password, $conn);
+            $regquery = $register->registration($ime, $email, $hashedpassword, $conn);
             if ($regquery) {
                 redirect("Uspesna registracija", "login.php");
             } else {
