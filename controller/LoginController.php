@@ -26,13 +26,13 @@ public function login($email, $password, mysqli $conn){
             $_SESSION['role_as'] = $role_as;
     
             if ($role_as == 1) {
-                redirect("Welcome to dashboard", "../admin/admin.php");
+                redirect("Dobrodošli", "../admin/admin.php");
                 
             } else {
-                redirect("Logged in successfuly", "home.php");
+                redirect("Ulogovali ste se", "home.php");
             }
         } else {
-            redirect("Invalid Credentials", "login.php");
+            redirect("Netačni podaci", "login.php");
 }
 }
 }

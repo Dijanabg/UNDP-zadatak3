@@ -1,5 +1,6 @@
 <?php
-include "../code/auth.php";
+require "../middleware/adminMiddleware.php";
+//include "../code/auth.php";
 include_once "../functions/myfunctions.php";
 include_once "inc/header.php";
 

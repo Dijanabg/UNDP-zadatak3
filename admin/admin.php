@@ -2,12 +2,9 @@
 
 //echo "hello admin";
 //https://www.creative-tim.com/product/material-dashboard
+require "../middleware/adminMiddleware.php";
 include_once "../functions/myfunctions.php";
-include_once "../code/auth.php";
-include_once "../controller/AuthController.php";
-$authenticated = new AuthController;
-$authenticated->admin($conn);
-
+ 
 include "inc/header.php";
 
 ?>

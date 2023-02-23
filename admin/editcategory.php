@@ -1,6 +1,6 @@
 <?php
 
-
+require "../middleware/adminMiddleware.php";
 include_once "admin/inc/header.php";
 include_once "admin/inc/sidebar.php";
 
