@@ -12,7 +12,7 @@ include_once "../controller/UserController.php";
 <div class="py-3 bg-secondary">
     <div class="container">
         <h6 class="text-white fs-4"> 
-            <a class="text-white fs-4" href="home.php">Home /</a> Kategorije /
+            <a class="text-decoration-none text-white fs-4" href="home.php">Home /</a> Kategorije /
         
     </div>
 </div>
@@ -30,11 +30,11 @@ include_once "../controller/UserController.php";
                         foreach ($activcat as $item) {
                     ?>
                             <div class="col-md-4 mb-5 mt-5">
-                                <a href="productsByCategory.php?categoryId=<?= $item['id']; ?>">
+                                <a class="text-dark  text-decoration-none " href="productsByCategory.php?categoryId=<?= $item['id']; ?>">
                                     <div class="card shadow">
                                         <div class="card-body">
                                             <img class="w-100 " height='200px' src="../uploads/<?= $item['image'] ?>" alt="Category image">
-                                            <h4 class="text-center"><?= $item['ime']; ?></h4>
+                                            <h4 class="text-center fs-3 mt-5"><?= $item['ime']; ?></h4>
                                         </div>
                                     </div>
                                 </a>

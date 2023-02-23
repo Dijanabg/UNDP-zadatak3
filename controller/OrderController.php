@@ -41,10 +41,4 @@ function getOrderDetails($trackingNo){
     $order_query_run = mysqli_query($conn, $order_query);
     return $order_query_run;
 }
-function getstatus($trackNo){
-    global $conn;
-    $statusQuery = "SELECT status FROM orders WHERE trackingNo='$trackNo'";
-    $statusQuery_run = mysqli_query($conn, $statusQuery);
-    return $statusQuery_run;
-}
 }

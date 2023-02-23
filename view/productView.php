@@ -14,8 +14,8 @@ if (isset($_GET['products'])) {
         <div class="py-3 bg-secondary fs-4">
             <div class="container">
                 <h6 class="text-white">
-                    <a class="text-white fs-4" href="home.php">Home /</a>
-                    <a class="text-white fs-4" href="category.php">Kategorije /</a>
+                    <a class="text-white text-decoration-none  fs-4" href="home.php">Home /</a>
+                    <a class="text-white  text-decoration-none fs-4" href="category.php">Kategorije /</a>
                     <?= $product['ime']; ?>
                 </h6>
             </div>
@@ -64,7 +64,7 @@ if (isset($_GET['products'])) {
                                     </button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary px-4">
+                                    <button class="btn btn-primary px-4 addToWishList" value="<?= $product['id'];?> ">
                                         <i class="fa fa-heart me-2"></i>
                                         Lista želja
                                     </button>

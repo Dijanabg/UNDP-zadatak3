@@ -222,7 +222,7 @@ sup {
  top:-.5em
 }
 a {
- color:var(--bs-link-color)
+ color:var(--bs-link-color);
 }
 a,
 a:hover {

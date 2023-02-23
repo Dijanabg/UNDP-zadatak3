@@ -31,6 +31,7 @@
                 
                 
                 <li><a class="dropdown-item fs-3" href="logout.php">Izloguj se</a></li>
+                <li><a class="dropdown-item fs-3" href="wishlist.php">Lista želja</a></li>
               </ul>
             </li>
             <li><?php include_once "../controller/AuthController.php";

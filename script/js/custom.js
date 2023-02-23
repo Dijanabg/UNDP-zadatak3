@@ -143,6 +143,68 @@ $(document).ready(function () {
             }
         });
     });
+    $(document).on('click', '.addToWishList', function (e) {
+        e.preventDefault();
+        var prodId = $(this).val();
+        //var prodId = $(this).closest('.product_data').find('.prodId').val();
+        console.log(prodId);
+
+        request=$.ajax({
+            method: "POST",
+            url: "../code/handleWishList.php",
+            data: {
+                "prodId": prodId,
+                "scope2": "add"
+            }
+        });
+           
+        request.done(function (response, textStatus, jqXHR) {
+            console.log(response)
+                if (response == 200) {
+                            alertify.success("Proizvod je dodat u listu želja");
+                        }
+                        else if (response == "existing") {
+                            alertify.success("Proizvod je već dodat u listu želja");
+                        }
+                        else if (response == 401) {
+                            alertify.success("Ulogujte se da bi nastavili");
+                        }
+                        else if (response == 500) {
+                            alertify.success("Nešto je pošlo po zlu");
+                        }
+        });
+            
+        request.fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Sledeca greska se desila: " + textStatus, errorThrown)
+                console.log(jqXHR)
+        });
+ 
+    });
+    $(document).on('click', '.delItem', function () {
+        var wishId = $(this).val();
+        //var wishId  = $(this).closest('.product_data').find('.id ').val();
+        console.log(wishId);
+        //alert(cart_id);
+        $.ajax({
+            method: "POST",
+            url: "../code/handleWishList.php",
+            data: {
+                "id": wishId,
+                "scope2": "delete"
+            },
+            success: function (response) {
+                console.log(response)
+                if (response == 200) {
+                    $('#mywishlist').load(location.href + " #mywishlist");
+                    alertify.success("Proizvod je izbrisan");
+                    //to refresh only cart
+                    
+                } else {
+                    alertify.success(response);
+                }
+            }
+        });
+    });
 });
 
     

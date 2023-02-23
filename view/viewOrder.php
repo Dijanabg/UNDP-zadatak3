@@ -27,9 +27,9 @@ $data = mysqli_fetch_array($validOrderData);
 <div class="py-3 bg-secondary">
     <div class="container">
         <h6 class="text-white fs-4">
-            <a href="home.php" class="text-white fs-4">Home /</a>
-            <a href="myOrders.php" class="text-white fs-4">Moje potudžbine /</a>
-            <a href="#" class="text-white fs-4">Vidi porudžbinu /</a>
+            <a href="home.php" class="text-white  text-decoration-none fs-4">Home /</a>
+            <a href="myOrders.php" class="text-white text-decoration-none  fs-4">Moje porudžbine /</a>
+            <a href="#" class="text-white text-decoration-none  fs-4">Vidi porudžbinu /</a>
 
         </h6>
     </div>

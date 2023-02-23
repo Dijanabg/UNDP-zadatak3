@@ -19,8 +19,8 @@ if (isset($_GET['categoryId'])) {
         <div class="py-3 bg-secondary">
             <div class="container">
                 <h6 class="text-white fs-4">
-                    <a class="text-white" href="home.php">Home /</a>
-                    <a class="text-white" href="category.php">Kategorije /</a>
+                    <a class="text-white text-decoration-none " href="home.php">Home /</a>
+                    <a class="text-white text-decoration-none " href="category.php">Kategorije /</a>
                     <?= $category['ime']; ?>
                 </h6>
             </div>
@@ -39,12 +39,12 @@ if (isset($_GET['categoryId'])) {
                                 foreach ($products as $item) {
                             ?>
                                     <div class="col-md-4 mb-2 ">
-                                        <a href="productView.php?products=<?= $item['id']; ?>">
+                                        <a class="text-dark  text-decoration-none " href="productView.php?products=<?= $item['id']; ?>">
                                             <div class="card shadow">
                                                 <div class="card-body">
                                                     <img class="w-100 " height='200px' src="../uploads/<?= $item['image'] ?>" alt="Product image">
-                                                    <h4 class="text-center"><?= $item['ime']; ?></h4>
-                                                    <h4 class="text-center text-dark"><?= $item['prodajnaCena']; ?> DIN</h4>
+                                                    <h4 class="text-center mt-5"><?= $item['ime']; ?></h4>
+                                                    <h4 class="text-center text-danger mt-5"><?= $item['prodajnaCena']; ?> DIN</h4>
                                                 </div>
                                             </div>
                                         </a>
