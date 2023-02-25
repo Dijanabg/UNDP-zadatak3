@@ -8,7 +8,9 @@ include "../inc/header.php";
 <!--Section heading-->
 <h2 class="h1-responsive font-weight-bold text-center my-4 mb-5">Kontaktirajte nas</h2>
 <!--Section description-->
-<p class="text-center w-responsive mx-auto mb-5 mt-5">Da li imate neka pitanja za nas? Molimo nemojte odlagati, pišite nam odmah. Naš tim će Vam odgovoriti u najkraćem mogućem roku.</p>
+<p class="text-center fs-4 w-responsive mx-auto mb-2 mt-5">Da li imate neka pitanja za nas?</p>
+<p class="text-center fs-4 w-responsive mx-auto ">Molimo nemojte odlagati, pišite nam odmah.</p>
+<p class="text-center fs-4 w-responsive mx-auto ">Naš tim će Vam odgovoriti u najkraćem mogućem roku.</p>
 
 <div class="row px-5 mt-5">
 
@@ -23,8 +25,8 @@ include "../inc/header.php";
                 <!--Grid column-->
                 <div class="col-md-5">
                     <div class="md-form mb-0">
+                        <label for="name" class="fs-4">Vaše ime</label>
                         <input type="text" id="name" name="name" class="form-control">
-                        <label for="name" class="">Vaše ime</label>
                     </div>
                 </div>
                 <!--Grid column-->
@@ -32,8 +34,8 @@ include "../inc/header.php";
                 <!--Grid column-->
                 <div class="col-md-5">
                     <div class="md-form mb-0">
+                        <label for="email" class="fs-4">Vaš email</label>
                         <input type="text" id="email" name="email" class="form-control">
-                        <label for="email" class="">Vaš email</label>
                     </div>
                 </div>
                 <!--Grid column-->
@@ -46,8 +48,8 @@ include "../inc/header.php";
             <div class="col-md-2 mt-5"></div>
                 <div class="col-md-10">
                     <div class="md-form mb-0">
+                        <label for="subject" class="fs-4">Tema</label>
                         <input type="text" id="subject" name="subject" class="form-control">
-                        <label for="subject" class="">Tema</label>
                     </div>
                 </div>
             </div>
@@ -60,8 +62,9 @@ include "../inc/header.php";
                 <div class="col-md-10">
 
                     <div class="md-form">
+                        
+                    <label for="message"class="fs-4">Vaša poruka</label>
                         <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea"></textarea>
-                        <label for="message">Vaša poruka</label>
                     </div>
 
                 </div>
@@ -71,7 +74,7 @@ include "../inc/header.php";
         </form>
         
         <div class="text-center text-md-left">
-        <Pošalji class="btn btn-primary" onclick="validateForm();">Pošalji</a>
+        <a class="btn btn-primary" onclick="validateForm();">Pošalji</a>
         </div>
         <div class="status"></div>
     </div>
@@ -81,15 +84,15 @@ include "../inc/header.php";
     <div class="col-md-3 mt-5 text-center">
         <ul class="list-unstyled mb-0 mt-5">
             <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                <p>Nemanjina 1, Beograd, Srbija</p>
+                <p class="fs-4">Nemanjina 1, Beograd, Srbija</p>
             </li>
 
-            <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                <p>+8164555666</p>
+            <li><i class="fa fa-phone mt-4 fa-2x"></i>
+                <p class="fs-4">+8164555666</p>
             </li>
 
-            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                <p>xzy@gmail.com</p>
+            <li><i class="fa fa-envelope mt-4 fa-2x"></i>
+                <p class="fs-4">xzy@gmail.com</p>
             </li>
         </ul>
     </div>

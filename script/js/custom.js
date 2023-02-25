@@ -233,6 +233,6 @@ function validateForm() {
         document.querySelector('.status').innerHTML = "Message cannot be empty";
         return false;
     }
-    document.querySelector('.status').innerHTML = "Sending...";
+    document.querySelector('.status').innerHTML = "Email sent!";
   }
     
