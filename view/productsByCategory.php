@@ -10,7 +10,7 @@ if (isset($_GET['categoryId'])) {
     
     $category_id = $_GET['categoryId'];
     $category_cat=new UserController;
-    $category_data = $category_cat->getStatusActive('categories', $category_id);
+    $category_data = $category_cat->getStatusActive( $category_id);
     $category = mysqli_fetch_array($category_data);
     if ($category) {
         //$category_id = $category['id'];
@@ -25,12 +25,13 @@ if (isset($_GET['categoryId'])) {
                 </h6>
             </div>
         </div>
-        <div class="py-4">
+        <div class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="row">
+                    <div class="col-md-12 mb-5 mt-5">
+                        <div class="row " height='250px' >
                             <h2><?= $category['ime']; ?></h2>
+                            
                             <hr>
                             <?php
                             $probycat= new UserController;
@@ -38,13 +39,14 @@ if (isset($_GET['categoryId'])) {
                             if (mysqli_num_rows($products) > 0) {
                                 foreach ($products as $item) {
                             ?>
-                                    <div class="col-md-4 mb-2 ">
+                                    <div class="col-md-3 mb-2 mt-5">
                                         <a class="text-dark  text-decoration-none " href="productView.php?products=<?= $item['id']; ?>">
-                                            <div class="card shadow">
-                                                <div class="card-body">
-                                                    <img class="w-100 " height='200px' src="../uploads/<?= $item['image'] ?>" alt="Product image">
-                                                    <h4 class="text-center mt-5"><?= $item['ime']; ?></h4>
-                                                    <h4 class="text-center text-danger mt-5"><?= $item['prodajnaCena']; ?> DIN</h4>
+                                            <div class="card shadow" style="height: 280px" >
+                                                <div class="card-body text-center mt-5">
+                                                    <img class="w-50 mb-3" height='100px' src="../uploads/<?= $item['image'] ?>" alt="Product image">
+                                                    <h4 class="text-center mt-5 mb-5"><?= $item['ime']; ?></h4>
+                                                
+                                                    <h4 class="  text-center text-danger mt-5"><?= $item['prodajnaCena']; ?> DIN</h4>
                                                 </div>
                                             </div>
                                         </a>

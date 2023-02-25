@@ -48,7 +48,9 @@ html{
 section{
    padding:3rem 2rem;
 }
-
+.card-body{
+   height: 250px;
+}
 .empty{
    padding:1.5rem;
    text-align: center;

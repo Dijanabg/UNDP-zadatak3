@@ -19,7 +19,7 @@ include_once "../controller/UserController.php";
 <div class="py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="row ">
                     <h1 class="col-md-12 mb-5 mt-5">Kategorije</h1>
                     <hr>
@@ -29,11 +29,11 @@ include_once "../controller/UserController.php";
                     if (mysqli_num_rows($activcat) > 0) {
                         foreach ($activcat as $item) {
                     ?>
-                            <div class="col-md-4 mb-5 mt-5">
+                            <div class="col-md-3 mb-5 mt-5">
                                 <a class="text-dark  text-decoration-none " href="productsByCategory.php?categoryId=<?= $item['id']; ?>">
                                     <div class="card shadow">
-                                        <div class="card-body">
-                                            <img class="w-100 " height='200px' src="../uploads/<?= $item['image'] ?>" alt="Category image">
+                                        <div class="card-body text-center mt-5">
+                                            <img class="w-50 " height='100px' src="../uploads/<?= $item['image'] ?>" alt="Category image">
                                             <h4 class="text-center fs-3 mt-5"><?= $item['ime']; ?></h4>
                                         </div>
                                     </div>

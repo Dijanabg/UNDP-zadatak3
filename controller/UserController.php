@@ -20,10 +20,10 @@ function getAllTrending()
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
-function getStatusActive($table, $slug)
+function getStatusActive($category_id)
 {
     global $conn;
-    $query = "SELECT * FROM $table WHERE status='0' LIMIT 1";
+    $query = "SELECT * FROM categories  WHERE status='0' AND id=$category_id LIMIT 1";
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }

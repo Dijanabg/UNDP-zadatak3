@@ -135,7 +135,7 @@ if (isset($_POST['add_category_btn'])) {
     }
 } elseif (isset($_POST['update_product_btn'])) {
     $product_id = $_POST['id'];
-    $category_id = $_POST['category_id'];
+    $category_id = $_POST['categoryId']; 
 
     $ime = $_POST['ime'];
     $kratkiOpis = $_POST['kratkiOpis'];

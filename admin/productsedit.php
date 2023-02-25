@@ -12,8 +12,8 @@ include_once "../controller/TableController.php"
             <?php
 
             if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-                $product = getById('products', $id);
+                $prodId = $_GET['id'];
+                $product = getById('products', $prodId);
 
                 if (mysqli_num_rows($product) > 0) {
                     $data = mysqli_fetch_array($product); 
@@ -31,15 +31,16 @@ include_once "../controller/TableController.php"
                                     <div class="col-md-12  mb-2">
                                         <label for="">Izaberi kategoriju</label>
 
-                                        <select name="category_id"  class="form-select">
+                                        <select name="categoryId"  class="form-select">
                                             <option selected>Izaberi kategoriju</option>
+                                           
                                             <?php
                                             $category = getAll("categories");
 
                                             if (mysqli_num_rows($category) > 0) {
                                                 foreach ($category as $item) {
                                             ?>
-                                                    <option value="<?= $item['id']; ?>" <?= $data['category'] = $item['id'] ? "selected" : ""; ?>><?= $item['ime'] ?></option>
+                                                    <option value="<?= $item['id']; ?>" <?= $data['categoryId'] == $item['id'] ? "selected" : ""; ?>><?= $item['ime'] ?></option>
                                             <?php
                                                 }
                                             } else {
