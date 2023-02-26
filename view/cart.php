@@ -28,16 +28,16 @@ include "../inc/header.php";
                         $items = $proditems-> getCartItems();
                         if (mysqli_num_rows($items) > 0) { ?>
                             <div class="row align-items-center">
-                                <div class="col-md-6">
+                                <div class="col-md-6 text-center">
                                     <h6>Proizvod</h6>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 text-center">
                                     <h6>Cena</h6>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 ">
                                     <h6>Količina</h6>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 ">
                                     <h6>Akcija</h6>
                                 </div>
                             </div>
@@ -49,17 +49,17 @@ include "../inc/header.php";
                                 ?>
                                     <div class="card product_data shadow-sm mb-3">
                                         <div class="row align-items-center">
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 text-center">
                                                 <img src="../uploads/<?= $citem['image']; ?>" alt="" class="w-50">
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 text-center">
                                                 <h5><?= $citem['ime']; ?></h5>
                                             </div>
                                             <div class="col-md-2 text-center">
                                                 <h3 class=""> <?=
                                 $subPrice = $citem['prodajnaCena'] * $citem['prodQty']; ?></h3>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 text-center">
                                                 <input type="hidden" class="prodId" value="<?= $citem['prodId']; ?>">
                                                 <div class="input-group mb-3" style="width: 80px;">
                                                     <button class="input-group-text decrement-btn updateQty">-</button>

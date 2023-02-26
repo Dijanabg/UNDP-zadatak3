@@ -10,9 +10,9 @@ include "../inc/header.php";
 ?>
 <div class="py-3 bg-secondary">
     <div class="container">
-        <h6 class="text-white">
-            <a href="home.php" class="text-white text-decoration-none ">Home /</a>
-            Cart /
+        <h6 class="text-white fs-4">
+            <a href="home.php" class="text-white text-decoration-none fs-4">Home /</a>
+            Lista želja
         </h6>
     </div>
 </div>
@@ -28,19 +28,19 @@ include "../inc/header.php";
                         $items = $proditems-> getWishItems();
                         if (mysqli_num_rows($items) > 0) { ?>
                             <div class="row align-items-center">
-                                <div class="col-md-2">
+                                <div class="col-md-2 text-center">
                                     <h6>Slika</h6>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 text-center">
                                     <h6>Naziv</h6>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 text-center">
                                     <h6>Cena</h6>
                                 </div>
                                 <div class="col-md-2">
-                                    <h6>Količina</h6>
+                                               
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4 text-center">
                                     <h6>Akcija</h6>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@ include "../inc/header.php";
                                 ?>
                                     <div class="card product_data shadow-sm mb-3">
                                         <div class="row align-items-center">
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 text-center">
                                                 <img src="../uploads/<?= $witem['image']; ?>" alt="" class="w-50">
                                             </div>
                                             <div class="col-md-2">
@@ -60,14 +60,14 @@ include "../inc/header.php";
                                                 <h3> <?= $witem['prodajnaCena']; ?></h3>
                                             </div>
                                             <div class="col-md-2">
-                                            <h3> <?= $witem['kolicina']; ?></h3>
+                                               
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 text-center">
                                                 <button class="btn btn-danger btn-sm  delItem" value="<?= $witem['wid']; ?>">
                                                     <i class="fa fa-trash me-2"></i> Ukloni
                                                 </button>
                                             </div>
-                                            <div class=" col-md-2">
+                                            <div class=" col-md-2 text-center">
                                             <button class=" btn btn-primary btn-sm">
                                                  <a class="text-decoration-none text-white" href="productView.php?products=<?= $witem['id']; ?>">Vidi</a>
                                             </button>

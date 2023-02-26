@@ -3,7 +3,7 @@
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $database = "zadatak3";
+    $database = "hellshop"; //izmena zbog nepredvidjenih problema sa bazom, importovana prethodna
 
     $conn = new mysqli($host, $user, $pass, $database);
     //print_r($conn);

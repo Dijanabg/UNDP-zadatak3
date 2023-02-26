@@ -101,4 +101,56 @@ include "../inc/header.php";
 </div>
 
 </section>
+
+<div class="row justify-content-center mb-1 ">
+<h2 class="text-center">Naše prodavnice</h2>
+        <div class="col-3 text-center">
+            
+            <div class="input-group mb-1">
+                <input type="text" id="search" autocomplete="off" class="form-control form-control-lg" placeholder="Grad">
+            </div>
+        </div>
+</div>
+<div class="row justify-content-center my-5  ">
+        <div class="col-8 text-center">
+            <table class="table table-bordered" id="table">
+                <thead class="bg-secondary fs-4 text-white">
+                    <tr>
+                        <th>Grad</th>
+                        <th>Adresa</th>
+                        <th>Telefon</th>
+                        <th>Radno vreme</th>
+                    </tr>
+                </thead>
+                <tbody class="fs-4 ">
+                    <?php
+                    require '../config/db.php';
+                    $query  = "SELECT * From store";
+                    $result = mysqli_query($conn, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($Row = mysqli_fetch_assoc($result)) {
+                            //displaying data in table rows dynamically
+                    ?>
+                            <tr>
+                                <td><?php
+                                    echo $Row['grad'];
+                                    ?></td>
+                                <td><?php
+                                    echo $Row['adresa'];
+                                    ?></td>
+                                <td><?php
+                                    echo $Row['telefon'];
+                                    ?></td>
+                                <td><?php
+                                    echo $Row['radnoVreme'];
+                                    ?></td>
+                            </tr>
+                    <?php
+                        }
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 <?php include "../inc/footer.php";

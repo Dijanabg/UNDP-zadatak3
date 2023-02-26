@@ -73,9 +73,10 @@ include_once "../controller/TableController.php"
                                     </div>
                                     <div class="col-md-12">
                                         <label class="mb-0" for="">Upload image</label>
-                                        <input type="hidden" name="old_image" value=" <?= $data['image']; ?>">
+                                        
                                         <input type="file" name="image" class="form-control mb-2">
                                         <label class="mb-0" for="">Trenutna slika</label>
+                                        <input type="hidden" name="old_image" value=" <?= $data['image']; ?>">
                                         <img src="../uploads/<?= $data['image']; ?>" alt="Product image" width="50px" height="50px">
                                     </div>
                                     <div class="row">

@@ -205,6 +205,25 @@ $(document).ready(function () {
             }
         });
     });
+    
+});
+$(document).ready(function () {
+    $("#search").on("keyup", function(e) {
+        //alert("hi");
+        e.preventDefault();
+        $("#table").trigger("reset");
+        var search = $(this).val();
+        $.ajax({
+            url: "../code/livesearch.php",
+            type: "POST",
+            data: {
+                search: search
+            },
+            success: function($data) {
+                $("#table").html($data);
+            }
+        });
+    });
 });
 function validateForm() {
     var name =  document.getElementById('name').value;
