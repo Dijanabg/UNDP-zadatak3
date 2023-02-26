@@ -27,5 +27,5 @@ if (!empty($_POST['search'])) {
         echo "Sorry! no records found";
     }
 } else {
-   redirect("Pokušajte ponovo","../view/contact.php");
+  echo ("Pokušajte ponovo");
 }
