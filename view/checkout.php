@@ -42,7 +42,7 @@ include "../inc/header.php";
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label class="fw-bold">Adresa</label>
-                                    <textarea name="adresa" class="form-control " rows="10" required></textarea>
+                                    <textarea name="adresa" class="form-control " rows="5" required></textarea>
                                 </div>
                             </div>
                         </div>

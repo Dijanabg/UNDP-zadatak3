@@ -12,16 +12,10 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="../view/category.php">Kategorije</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Katalog</a>
-        </li>
        
       </ul>
   </div>
-            <div class="input-group input-group-outline">
-              <label class="form-label">Type here...</label>
-              <input type="text" class="form-control">
-            </div>
+            
           </div>
 
         </div>

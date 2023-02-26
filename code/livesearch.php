@@ -1,12 +1,10 @@
 <?php
-
 include "../config/db.php";
 include_once "../functions/myfunctions.php";
 
 if (!empty($_POST['search'])) {
     $search_query = $conn->real_escape_string($_POST['search']);
-    $query = "SELECT * FROM store
-    WHERE grad LIKE '%{$search_query}%' LIMIT 6 OFFSET 0; ";
+    $query = "SELECT * FROM store WHERE grad LIKE '%{$search_query}%' LIMIT 6 OFFSET 0; ";
     $result = $conn->query($query);
     $html = "<table class='table table-bordered'>";
     $html .= "
@@ -15,8 +13,7 @@ if (!empty($_POST['search'])) {
       <th>Title </th>
       <th>Author</th>
       <th>Description</th>
-    </tr>
- ";
+    </tr>";
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             $html .= "<tr><td>" . $row['grad'] . "</td>";
@@ -24,7 +21,6 @@ if (!empty($_POST['search'])) {
             $html  .= "<td>" . $row['telefon'] . "</td>";
             $html  .= "<td>" . $row['radnoVreme'] . "</td></tr>";
         }
-        
         $html .= "</table>";
         echo $html;
     } else {
