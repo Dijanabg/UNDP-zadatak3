@@ -25,7 +25,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Uredi kategoriju</span>
+            <span class="nav-link-text ms-1">Kategorije</span>
           </a>
         </li>
         <li class="nav-item">
@@ -41,7 +41,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Uredi proizvod</span>
+            <span class="nav-link-text ms-1">Proizvodi</span>
           </a>
         </li>
         <li class="nav-item">
@@ -58,6 +58,14 @@
               <i class="material-icons opacity-10">table_view</i>
             </div>
             <span class="nav-link-text ms-1">Dodaj prodavnicu</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="storeadmin.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Prodavnice</span>
           </a>
         </li>
       </ul>
