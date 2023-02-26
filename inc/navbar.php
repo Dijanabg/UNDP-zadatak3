@@ -12,6 +12,9 @@
         <li class="nav-item">
           <a class="nav-link" href="category.php">Kategorije</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.php">Kontakt</a>
+        </li>
         
         <?php  
         if (isset($_SESSION['auth'])) 

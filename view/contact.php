@@ -125,7 +125,7 @@ include "../inc/header.php";
                 <tbody class="fs-4 ">
                     <?php
                     require '../config/db.php';
-                    $query  = "SELECT * From store";
+                    $query  = "SELECT * FROM store";
                     $result = mysqli_query($conn, $query);
                     if (mysqli_num_rows($result) > 0) {
                         while ($Row = mysqli_fetch_assoc($result)) {

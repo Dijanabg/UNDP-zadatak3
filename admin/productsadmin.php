@@ -21,6 +21,7 @@ include_once "../controller/TableController.php";
                                 <th>Ime</th>
                                 <th>Image</th>
                                 <th>Status</th>
+                                <th>Trend</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
